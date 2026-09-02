@@ -3,65 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منصة الأدوات التقنية | Multi-Tech Tools Hub</title>
+    <title>منصة الأدوات التقنية المتقدمة | Multi-Tech Tools Hub</title>
     <script src="https://pl31155747.profitableratecpmnetwork.com/f1/13/ac/f113ac1625ae6b035687cd512a4e75ac.js"></script>
     <meta name="google-site-verification" content="atFWMIP5tv3_D3f-d3-3wGpg3hVF13vBj91w2Kghd44" />
     <link rel="icon" type="image/jpeg" href="favicon.jpg">
     <style>
         * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; }
-        body { background-color: #0f172a; color: #f8fafc; display: flex; flex-direction: column; min-height: 100vh; line-height: 1.6; }
+        body { background-color: #090d16; color: #f1f5f9; display: flex; flex-direction: column; min-height: 100vh; line-height: 1.6; }
         
-        header { text-align: center; padding: 25px 20px; border-bottom: 1px solid #1e293b; background: #1e293b; position: relative; }
-        header h1 { color: #38bdf8; font-size: 2.2rem; margin-bottom: 8px; }
-        header p { color: #94a3b8; font-size: 0.95rem; }
+        header { text-align: center; padding: 30px 20px; border-bottom: 1px solid #1e293b; background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%); position: relative; box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
+        header h1 { color: #818cf8; font-size: 2.4rem; margin-bottom: 8px; text-shadow: 0 2px 10px rgba(129, 140, 248, 0.3); }
+        header p { color: #94a3b8; font-size: 1rem; }
 
         .lang-btn {
-            position: absolute; top: 20px; left: 20px;
-            background: #0f172a; color: #38bdf8; border: 1px solid #38bdf8;
-            padding: 8px 18px; border-radius: 20px; cursor: pointer; font-weight: bold; transition: 0.3s;
+            position: absolute; top: 25px; left: 25px;
+            background: #1e1b4b; color: #818cf8; border: 1px solid #6366f1;
+            padding: 8px 20px; border-radius: 25px; cursor: pointer; font-weight: bold; transition: 0.3s;
         }
-        [dir="ltr"] .lang-btn { left: auto; right: 20px; }
-        .lang-btn:hover { background: #38bdf8; color: #0f172a; }
+        [dir="ltr"] .lang-btn { left: auto; right: 25px; }
+        .lang-btn:hover { background: #6366f1; color: #fff; box-shadow: 0 0 12px rgba(99, 102, 241, 0.5); }
 
-        .main-layout { display: flex; flex: 1; max-width: 1300px; width: 100%; margin: 0 auto; padding: 20px; gap: 20px; }
+        .main-layout { display: flex; flex: 1; max-width: 1400px; width: 100%; margin: 0 auto; padding: 25px; gap: 25px; }
         
-        /* القائمة الجانبية للتنقل بين الأساليب والأدوات */
-        .sidebar { width: 280px; background: #1e293b; border-radius: 12px; padding: 15px; border: 1px solid #334155; height: fit-content; }
-        .sidebar h3 { font-size: 1.1rem; color: #38bdf8; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 1px solid #334155; }
+        /* القائمة الجانبية المحدثة */
+        .sidebar { width: 320px; background: #111827; border-radius: 16px; padding: 15px; border: 1px solid #1f2937; height: fit-content; max-height: 80vh; overflow-y: auto; box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
+        .sidebar::-webkit-scrollbar { width: 6px; }
+        .sidebar::-webkit-scrollbar-thumb { background: #374151; border-radius: 4px; }
+        .sidebar h3 { font-size: 1.15rem; color: #818cf8; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 1px solid #1f2937; }
+        
         .nav-btn {
-            display: block; width: 100%; text-align: start; background: transparent; color: #94a3b8;
-            border: none; padding: 12px 15px; border-radius: 8px; cursor: pointer; font-size: 0.95rem; margin-bottom: 6px; transition: 0.2s;
+            display: block; width: 100%; text-align: start; background: transparent; color: #9ca3af;
+            border: none; padding: 11px 15px; border-radius: 10px; cursor: pointer; font-size: 0.93rem; margin-bottom: 5px; transition: 0.2s;
         }
         [dir="ltr"] .nav-btn { text-align: left; }
-        .nav-btn:hover { background: #334155; color: #fff; }
-        .nav-btn.active { background: #0284c7; color: #fff; font-weight: bold; }
+        .nav-btn:hover { background: #1f2937; color: #fff; }
+        .nav-btn.active { background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%); color: #fff; font-weight: bold; box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4); }
 
-        /* منطقة الواجهة المعروضة للأداة */
-        .content-area { flex: 1; background: #1e293b; border-radius: 12px; padding: 30px; border: 1px solid #334155; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+        /* منطقة واجهة عرض الأدوات */
+        .content-area { flex: 1; background: #111827; border-radius: 16px; padding: 35px; border: 1px solid #1f2937; box-shadow: 0 8px 30px rgba(0,0,0,0.4); }
         .tool-view { display: none; }
         .tool-view.active { display: block; }
-        .tool-view h2 { color: #f1f5f9; font-size: 1.6rem; margin-bottom: 20px; border-bottom: 2px solid #38bdf8; display: inline-block; padding-bottom: 6px; }
+        .tool-view h2 { color: #f3f4f6; font-size: 1.7rem; margin-bottom: 25px; border-bottom: 2px solid #6366f1; display: inline-block; padding-bottom: 8px; }
 
-        .input-group { margin-bottom: 15px; }
-        label { display: block; margin-bottom: 8px; color: #94a3b8; font-size: 0.95rem; }
-        input, select, textarea { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #475569; background: #0f172a; color: #fff; font-size: 1rem; }
-        textarea { height: 120px; resize: vertical; }
+        .input-group { margin-bottom: 18px; }
+        label { display: block; margin-bottom: 8px; color: #9ca3af; font-size: 0.95rem; font-weight: 500; }
+        input, select, textarea { width: 100%; padding: 12px 15px; border-radius: 10px; border: 1px solid #374151; background: #030712; color: #fff; font-size: 1rem; transition: all 0.2s; }
+        input:focus, select:focus, textarea:focus { border-color: #6366f1; outline: none; box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15); }
+        textarea { height: 130px; resize: vertical; }
 
-        .action-btn { background: #0284c7; color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 1rem; transition: 0.2s; margin-top: 10px; width: 100%; }
-        .action-btn:hover { background: #0369a1; }
+        .action-btn { background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%); color: white; border: none; padding: 13px 20px; border-radius: 10px; cursor: pointer; font-weight: bold; font-size: 1rem; transition: 0.2s; margin-top: 10px; width: 100%; box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3); }
+        .action-btn:hover { background: linear-gradient(135deg, #4338ca 0%, #4f46e5 100%); transform: translateY(-1px); }
 
-        .result-box { margin-top: 20px; padding: 18px; background: #0f172a; border-radius: 8px; word-break: break-all; font-size: 1rem; border: 1px dashed #38bdf8; }
-        .pass-output { font-size: 1.3rem; color: #4ade80; font-family: monospace; }
-        .color-preview { height: 80px; border-radius: 8px; margin-top: 15px; border: 2px solid #fff; }
+        .result-box { margin-top: 20px; padding: 20px; background: #030712; border-radius: 10px; word-break: break-all; font-size: 1rem; border: 1px dashed #374151; }
+        .pass-output { font-size: 1.25rem; color: #34d399; font-family: monospace; letter-spacing: 1px; }
+        .color-preview { height: 90px; border-radius: 10px; margin-top: 15px; border: 2px solid #374151; transition: background-color 0.3s; }
 
-        footer { background: #1e293b; border-top: 1px solid #334155; text-align: center; padding: 20px; margin-top: auto; }
-        footer p { color: #94a3b8; font-size: 0.95rem; }
-        footer a { color: #38bdf8; text-decoration: none; font-weight: bold; margin-right: 5px; }
+        footer { background: #0b0f19; border-top: 1px solid #1f2937; text-align: center; padding: 25px; margin-top: auto; }
+        footer p { color: #9ca3af; font-size: 0.95rem; }
+        footer a { color: #818cf8; text-decoration: none; font-weight: bold; margin-right: 5px; }
         footer a:hover { text-decoration: underline; }
 
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
             .main-layout { flex-direction: column; }
-            .sidebar { width: 100%; }
+            .sidebar { width: 100%; max-height: none; }
+            .lang-btn { top: 20px; padding: 6px 14px; font-size: 0.85rem; }
         }
     </style>
 </head>
@@ -69,14 +74,14 @@
 
     <header>
         <button class="lang-btn" onclick="toggleLanguage()" id="langBtn">English</button>
-        <h1 id="headerTitle">منصة الأدوات التقنية الشاملة</h1>
-        <p id="headerDesc">مكتبة أدوات متكاملة وسريعة تعمل مباشرة في متصفحك بكل أمان.</p>
+        <h1 id="headerTitle">منصة الأدوات التقنية المتقدمة</h1>
+        <p id="headerDesc">مكتبة أدوات احترافية متكاملة تعمل مباشرة وسريعة في متصفحك بكل أمان.</p>
     </header>
 
     <div class="main-layout">
-        <!-- القائمة الجانبية لاختيار الأداة -->
+        <!-- القائمة الجانبية للأدوات الـ 15 -->
         <div class="sidebar">
-            <h3 id="sidebarTitle">الأدوات المتاحة</h3>
+            <h3 id="sidebarTitle">الأدوات المتاحة (15 أداة)</h3>
             <button class="nav-btn active" onclick="switchTool('t1', this)" id="nav_t1">1. ضغط وتحويل الصور</button>
             <button class="nav-btn" onclick="switchTool('t2', this)" id="nav_t2">2. مولد كلمات السر</button>
             <button class="nav-btn" onclick="switchTool('t3', this)" id="nav_t3">3. عداد الكلمات والأحرف</button>
@@ -84,12 +89,17 @@
             <button class="nav-btn" onclick="switchTool('t5', this)" id="nav_t5">5. محول صياغة النصوص</button>
             <button class="nav-btn" onclick="switchTool('t6', this)" id="nav_t6">6. مولد ألوان التصميم</button>
             <button class="nav-btn" onclick="switchTool('t7', this)" id="nav_t7">7. قارئ وحاسبة النصوص</button>
-            <button class="nav-btn" onclick="switchTool('t8', this)" id="nav_t8">8. مولد نصوص Lorim Ipsum</button>
-            <button class="nav-btn" onclick="switchTool('t9', this)" id="nav_t9">9. حاسبة التنسيق والعمر</button>
+            <button class="nav-btn" onclick="switchTool('t8', this)" id="nav_t8">8. مولد نصوص Lorem Ipsum</button>
+            <button class="nav-btn" onclick="switchTool('t9', this)" id="nav_t9">9. حاسبة العمر بالتفصيل</button>
             <button class="nav-btn" onclick="switchTool('t10', this)" id="nav_t10">10. مشفر فك التشفير Base64</button>
+            <button class="nav-btn" onclick="switchTool('t11', this)" id="nav_t11">11. حاسبة مؤشر كتلة الجسم BMI</button>
+            <button class="nav-btn" onclick="switchTool('t12', this)" id="nav_t12">12. مولد المعرفات الفريدة UUID</button>
+            <button class="nav-btn" onclick="switchTool('t13', this)" id="nav_t13">13. مولد التدرجات اللونية CSS</button>
+            <button class="nav_t14', this)" onclick="switchTool('t14', this)" id="nav_t14">14. منسق وصانع أكواد JSON</button>
+            <button class="nav-btn" onclick="switchTool('t15', this)" id="nav_t15">15. مولد رمز الاستجابة QR Code</button>
         </div>
 
-        <!-- منطقة استعراض الأداة المحددة -->
+        <!-- منطقة العرض والأدوات -->
         <div class="content-area">
             
             <!-- أداة 1 -->
@@ -137,7 +147,7 @@
             <div id="t4" class="tool-view">
                 <h2 id="t4_title">حاسبة تقدير وقت وسرعة التحميل</h2>
                 <div class="input-group">
-                    <label id="t4_lbl1">حجم الملف المراد تحكيله (GB):</label>
+                    <label id="t4_lbl1">حجم الملف المراد تحميله (GB):</label>
                     <input type="number" id="fileSize" value="10">
                 </div>
                 <div class="input-group">
@@ -152,18 +162,18 @@
             <div id="t5" class="tool-view">
                 <h2 id="t5_title">محول صياغة النصوص والأنماط</h2>
                 <div class="input-group">
-                    <input type="text" id="caseInput" placeholder="Enter or paste text here...">
+                    <input type="text" id="caseInput" placeholder="أدخل النص هنا لتغيير حالة الأحرف...">
                 </div>
                 <button class="action-btn" onclick="convertCase('upper')">UPPERCASE (حروف كبيرة)</button>
-                <button class="action-btn" onclick="convertCase('lower')" style="margin-top:8px;">lowercase (حروف صغيرة)</button>
+                <button class="action-btn" onclick="convertCase('lower')" style="margin-top:8px; background:#475569;">lowercase (حروف صغيرة)</button>
             </div>
 
             <!-- أداة 6 -->
             <div id="t6" class="tool-view">
                 <h2 id="t6_title">مولد الألوان العشوائية وأكواد التنسيق</h2>
-                <div id="colorBox" class="color-preview" style="background-color: #0284c7;"></div>
-                <button class="action-btn" onclick="generateColor()" id="t6_btn">توليد لون جديد</button>
-                <div class="result-box" id="colorCode" style="text-align:center; font-family:monospace; font-size:1.2rem;">#0284c7</div>
+                <div id="colorBox" class="color-preview" style="background-color: #4f46e5;"></div>
+                <button class="action-btn" onclick="generateColor()" id="t6_btn" style="margin-top: 15px;">توليد لون جديد</button>
+                <div class="result-box" id="colorCode" style="text-align:center; font-family:monospace; font-size:1.2rem;">#4f46e5</div>
             </div>
 
             <!-- أداة 7 -->
@@ -204,8 +214,61 @@
                     <input type="text" id="base64Input" placeholder="أدخل النص هنا للتشفير أو فك التشفير...">
                 </div>
                 <button class="action-btn" onclick="encodeBase64()">تشفير إلى Base64</button>
-                <button class="action-btn" onclick="decodeBase64()" style="margin-top:8px; background:#0f766e;">فك تشفير Base64</button>
+                <button class="action-btn" onclick="decodeBase64()" style="margin-top:8px; background:#475569;">فك تشفير Base64</button>
                 <div class="result-box" id="base64Result">...</div>
+            </div>
+
+            <!-- أداة 11: مؤشر كتلة الجسم BMI -->
+            <div id="t11" class="tool-view">
+                <h2 id="t11_title">حاسبة مؤشر كتلة الجسم (BMI)</h2>
+                <div class="input-group">
+                    <label id="t11_lbl1">الوزن (كغ):</label>
+                    <input type="number" id="bmiWeight" value="70">
+                </div>
+                <div class="input-group">
+                    <label id="t11_lbl2">الطول (سم):</label>
+                    <input type="number" id="bmiHeight" value="175">
+                </div>
+                <button class="action-btn" onclick="calcBMI()" id="t11_btn">احسب مؤشر الكتلة</button>
+                <div class="result-box" id="bmiResult">...</div>
+            </div>
+
+            <!-- أداة 12: توليد UUID -->
+            <div id="t12" class="tool-view">
+                <h2 id="t12_title">مولد المعرفات الفريدة (UUID v4)</h2>
+                <button class="action-btn" onclick="generateUUID()" id="t12_btn">توليد معرف جديد</button>
+                <div class="result-box">
+                    <span id="uuidResult" class="pass-output">...</span>
+                </div>
+            </div>
+
+            <!-- أداة 13: تدرجات لونية CSS -->
+            <div id="t13" class="tool-view">
+                <h2 id="t13_title">مولد التدرجات اللونية الجاهزة (CSS Gradients)</h2>
+                <div id="gradientBox" class="color-preview" style="background: linear-gradient(135deg, #4f46e5 0%, #ec4899 100%);"></div>
+                <button class="action-btn" onclick="generateGradient()" id="t13_btn" style="margin-top: 15px;">توليد تدرج عشوائي</button>
+                <div class="result-box" id="gradientCode" style="font-family:monospace; font-size:0.9rem;">background: linear-gradient(135deg, #4f46e5 0%, #ec4899 100%);</div>
+            </div>
+
+            <!-- أداة 14: منسق JSON -->
+            <div id="t14" class="tool-view">
+                <h2 id="t14_title">منسق وفاحص أكواد JSON</h2>
+                <div class="input-group">
+                    <textarea id="jsonInput" placeholder='أدخل كود JSON غير منسق هنا، مثال: {"name":"Yacine","age":16}'></textarea>
+                </div>
+                <button class="action-btn" onclick="formatJSON()" id="t14_btn">تنسيق وتدقيق JSON</button>
+                <div class="result-box" id="jsonResult" style="font-family:monospace; white-space: pre-wrap;">...</div>
+            </div>
+
+            <!-- أداة 15: مولد QR Code -->
+            <div id="t15" class="tool-view">
+                <h2 id="t15_title">مولد رموز الاستجابة السريعة (QR Code)</h2>
+                <div class="input-group">
+                    <label id="t15_lbl">النص أو الرابط المراد تحويله:</label>
+                    <input type="text" id="qrInput" value="https://instagram.com/yacine_chahta" placeholder="أدخل رابط أو نص...">
+                </div>
+                <button class="action-btn" onclick="generateQR()" id="t15_btn">إنشاء كود QR</button>
+                <div class="result-box" id="qrResult" style="text-align: center;">...</div>
             </div>
 
         </div>
@@ -220,31 +283,39 @@
 
         const translations = {
             ar: {
-                title: "منصة الأدوات التقنية الشاملة",
-                desc: "مكتبة أدوات متكاملة وسريعة تعمل مباشرة في متصفحك بكل أمان.",
-                btnLang: "English", dir: "rtl", sidebarTitle: "الأدوات المتاحة",
+                title: "منصة الأدوات التقنية المتقدمة",
+                desc: "مكتبة أدوات احترافية متكاملة تعمل مباشرة وسريعة في متصفحك بكل أمان.",
+                btnLang: "English", dir: "rtl", sidebarTitle: "الأدوات المتاحة (15 أداة)",
                 footerText: 'تطوير وتصميم بواسطة: <strong>ياسين</strong> | للتواصل عبر إنستغرام: <a href="https://instagram.com/yacine_chahta" target="_blank">@yacine_chahta</a>',
                 nav_t1: "1. ضغط وتحويل الصور", nav_t2: "2. مولد كلمات السر", nav_t3: "3. عداد الكلمات والأحرف",
                 nav_t4: "4. حاسبة سرعة التحميل", nav_t5: "5. محول صياغة النصوص", nav_t6: "6. مولد ألوان التصميم",
                 nav_t7: "7. حاسبة وقت القراءة", nav_t8: "8. مولد نصوص Lorem", nav_t9: "9. حاسبة العمر بالتفصيل", nav_t10: "10. مشفر فك التشفير Base64",
+                nav_t11: "11. حاسبة مؤشر كتلة الجسم BMI", nav_t12: "12. مولد المعرفات الفريدة UUID", nav_t13: "13. مولد التدرجات اللونية CSS", nav_t14: "14. منسق وصانع أكواد JSON", nav_t15: "15. مولد رمز الاستجابة QR Code",
                 t1_title: "أداة ضغط وتحويل صيغ الصور", t1_lbl1: "اختر صورة من جهازك:", t1_lbl2: "الصيغة المستهدفة للتحويل:", t1_btn: "معالجة وتحويل الصورة",
                 t2_title: "مولد كلمات السر القوية والآمنة", t2_lbl: "طول كلمة السر (عدد الخانات):", t2_btn: "توليد كلمة السر",
                 t3_title: "عداد الكلمات والأحرف والأسطر", t3_ph: "أدخل أو الصق النص هنا...",
-                t4_title: "حاسبة تقدير وقت وسرعة التحميل", t4_lbl1: "حجم الملف المراد تحكيله (GB):", t4_lbl2: "سرعة الإنترنت لديك (Mbps):", t4_btn: "حساب الوقت المتوقع",
+                t4_title: "حاسبة تقدير وقت وسرعة التحميل", t4_lbl1: "حجم الملف المراد تحميله (GB):", t4_lbl2: "سرعة الإنترنت لديك (Mbps):", t4_btn: "حساب الوقت المتوقع",
                 t5_title: "محول صياغة النصوص والأنماط",
                 t6_title: "مولد الألوان العشوائية وأكواد التنسيق", t6_btn: "توليد لون جديد",
                 t7_title: "حاسبة زَمَن قراءة النص المقدر", t7_ph: "الصق النص لمعرفة وقت القراءة المتوقع...",
                 t8_title: "مولد نصوص تجريبية (Lorem Ipsum)", t8_lbl: "عدد الفقرات المطلوب توليدها:", t8_btn: "توليد النص التجريبي",
-                t9_title: "حاسبة العمر والدقائق بالتفصيل", t9_lbl: "تاريخ ميلادك:", t9_btn: "حساب العمر"
+                t9_title: "حاسبة العمر والدقائق بالتفصيل", t9_lbl: "تاريخ ميلادك:", t9_btn: "حساب العمر",
+                t10_title: "مشفّر ومفكك نصوص Base64",
+                t11_title: "حاسبة مؤشر كتلة الجسم (BMI)", t11_lbl1: "الوزن (كغ):", t11_lbl2: "الطول (سم):", t11_btn: "احسب مؤشر الكتلة",
+                t12_title: "مولد المعرفات الفريدة (UUID v4)", t12_btn: "توليد معرف جديد",
+                t13_title: "مولد التدرجات اللونية الجاهزة (CSS Gradients)", t13_btn: "توليد تدرج عشوائي",
+                t14_title: "منسق وفاحص أكواد JSON", t14_btn: "تنسيق وتدقيق JSON",
+                t15_title: "مولد رموز الاستجابة السريعة (QR Code)", t15_lbl: "النص أو الرابط المراد تحويله:", t15_btn: "إنشاء كود QR"
             },
             en: {
-                title: "Multi-Tech Tools Hub",
-                desc: "A fast, secure, and free suite of browser utility tools.",
-                btnLang: "العربية", dir: "ltr", sidebarTitle: "Available Tools",
+                title: "Advanced Multi-Tech Tools Hub",
+                desc: "A professional and comprehensive suite of secure browser utility tools.",
+                btnLang: "العربية", dir: "ltr", sidebarTitle: "Available Tools (15 Tools)",
                 footerText: 'Developed by: <strong>Yacine</strong> | Instagram: <a href="https://instagram.com/yacine_chahta" target="_blank">@yacine_chahta</a>',
                 nav_t1: "1. Image Converter", nav_t2: "2. Password Generator", nav_t3: "3. Word & Char Counter",
                 nav_t4: "4. Download Speed Calc", nav_t5: "5. Text Case Converter", nav_t6: "6. Random Color Generator",
                 nav_t7: "7. Reading Time Calc", nav_t8: "8. Lorem Ipsum Generator", nav_t9: "9. Detailed Age Calculator", nav_t10: "10. Base64 Encoder/Decoder",
+                nav_t11: "11. BMI Calculator", nav_t12: "12. UUID v4 Generator", nav_t13: "13. CSS Gradient Generator", nav_t14: "14. JSON Formatter & Lint", nav_t15: "15. QR Code Generator",
                 t1_title: "Image Converter & Compressor", t1_lbl1: "Select Image:", t1_lbl2: "Target Format:", t1_btn: "Process Image",
                 t2_title: "Strong Password Generator", t2_lbl: "Password Length:", t2_btn: "Generate Password",
                 t3_title: "Word, Character & Line Counter", t3_ph: "Type or paste text here...",
@@ -253,7 +324,13 @@
                 t6_title: "Random Color Generator", t6_btn: "Generate New Color",
                 t7_title: "Estimated Reading Time Calculator", t7_ph: "Paste text to estimate reading time...",
                 t8_title: "Lorem Ipsum Text Generator", t8_lbl: "Number of Paragraphs:", t8_btn: "Generate Text",
-                t9_title: "Detailed Age Calculator", t9_lbl: "Your Birth Date:", t9_btn: "Calculate Age"
+                t9_title: "Detailed Age Calculator", t9_lbl: "Your Birth Date:", t9_btn: "Calculate Age",
+                t10_title: "Base64 Encoder & Decoder",
+                t11_title: "Body Mass Index (BMI) Calculator", t11_lbl1: "Weight (kg):", t11_lbl2: "Height (cm):", t11_btn: "Calculate BMI",
+                t12_title: "Unique Identifier Generator (UUID v4)", t12_btn: "Generate New UUID",
+                t13_title: "CSS Gradient Background Generator", t13_btn: "Generate Random Gradient",
+                t14_title: "JSON Formatter & Validator", t14_btn: "Format & Validate JSON",
+                t15_title: "QR Code Generator", t15_lbl: "Text or URL to convert:", t15_btn: "Generate QR Code"
             }
         };
 
@@ -275,7 +352,7 @@
             document.getElementById('sidebarTitle').innerText = data.sidebarTitle;
             document.getElementById('footerText').innerHTML = data.footerText;
 
-            for(let i=1; i<=10; i++) {
+            for(let i=1; i<=15; i++) {
                 if(data[`nav_t${i}`]) document.getElementById(`nav_t${i}`).innerText = data[`nav_t${i}`];
                 if(data[`t${i}_title`]) document.getElementById(`t${i}_title`).innerText = data[`t${i}_title`];
             }
@@ -295,9 +372,20 @@
             document.getElementById('t8_btn').innerText = data.t8_btn;
             document.getElementById('t9_lbl').innerText = data.t9_lbl;
             document.getElementById('t9_btn').innerText = data.t9_btn;
+            
+            if(document.getElementById('t11_lbl1')) {
+                document.getElementById('t11_lbl1').innerText = data.t11_lbl1;
+                document.getElementById('t11_lbl2').innerText = data.t11_lbl2;
+                document.getElementById('t11_btn').innerText = data.t11_btn;
+                document.getElementById('t12_btn').innerText = data.t12_btn;
+                document.getElementById('t13_btn').innerText = data.t13_btn;
+                document.getElementById('t14_btn').innerText = data.t14_btn;
+                document.getElementById('t15_lbl').innerText = data.t15_lbl;
+                document.getElementById('t15_btn').innerText = data.t15_btn;
+            }
         }
 
-        // Logic for Tools
+        // Logic for Tools 1 to 10
         function processImage() {
             const input = document.getElementById('imageInput');
             const format = document.getElementById('formatSelect').value;
@@ -312,11 +400,15 @@
                     canvas.width = img.width; canvas.height = img.height;
                     canvas.getContext('2d').drawImage(img, 0, 0);
                     const link = document.createElement('a');
-                    link.href = canvas.toDataURL(format, 0.8);
+                    link.href = canvas.toDataURL(format, 0.85);
                     link.download = `converted-image.${format.split('/')[1]}`;
-                    link.innerText = currentLang === 'ar' ? 'تحميل الصورة المعالجة' : 'Download Image';
-                    link.style.color = '#38bdf8';
-                    resultBox.innerHTML = ''; resultBox.appendChild(link); resultBox.style.display = 'block';
+                    link.innerText = currentLang === 'ar' ? '📥 تحميل الصورة المعالجة' : '📥 Download Processed Image';
+                    link.style.color = '#818cf8';
+                    link.style.fontWeight = 'bold';
+                    link.style.textDecoration = 'none';
+                    resultBox.innerHTML = ''; 
+                    resultBox.appendChild(link); 
+                    resultBox.style.display = 'block';
                 }
             }
             reader.readAsDataURL(input.files[0]);
@@ -345,10 +437,13 @@
             const speedMbps = parseFloat(document.getElementById('netSpeed').value);
             if(!sizeGB || !speedMbps) return;
             const totalSec = Math.round((sizeGB * 1024) / (speedMbps / 8));
-            const mins = Math.floor(totalSec / 60); const secs = totalSec % 60;
+            const hrs = Math.floor(totalSec / 3600);
+            const mins = Math.floor((totalSec % 3600) / 60); 
+            const secs = totalSec % 60;
+            
             document.getElementById('downloadResult').innerText = currentLang === 'ar'
-                ? `الوقت المقدر: ${mins} دقيقة و ${secs} ثانية`
-                : `Estimated Time: ${mins}m ${secs}s`;
+                ? `الوقت المقدر: ${hrs > 0 ? hrs + ' ساعة و ' : ''}${mins} دقيقة و ${secs} ثانية`
+                : `Estimated Time: ${hrs > 0 ? hrs + 'h ' : ''}${mins}m ${secs}s`;
         }
 
         function convertCase(type) {
@@ -374,7 +469,7 @@
 
         function generateLorem() {
             const count = document.getElementById('loremCount').value;
-            const loremText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ";
+            const loremText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ";
             let res = "";
             for(let i=0; i<count; i++) res += `<p style="margin-bottom:10px;">${loremText}</p>`;
             document.getElementById('loremResult').innerHTML = res;
@@ -393,17 +488,75 @@
         }
 
         function encodeBase64() {
-            const val = document.getElementById('base64Input').value;
-            document.getElementById('base64Result').innerText = btoa(val);
+            try {
+                const val = document.getElementById('base64Input').value;
+                document.getElementById('base64Result').innerText = btoa(unescape(encodeURIComponent(val)));
+            } catch(e) {
+                document.getElementById('base64Result').innerText = "Error encoding text!";
+            }
         }
 
         function decodeBase64() {
             try {
                 const val = document.getElementById('base64Input').value;
-                document.getElementById('base64Result').innerText = atob(val);
+                document.getElementById('base64Result').innerText = decodeURIComponent(escape(atob(val)));
             } catch(e) {
                 document.getElementById('base64Result').innerText = "Error: Invalid Base64 string!";
             }
+        }
+
+        // Logic for New Tools (11 to 15)
+        function calcBMI() {
+            const w = parseFloat(document.getElementById('bmiWeight').value);
+            const h = parseFloat(document.getElementById('bmiHeight').value) / 100;
+            if(!w || !h) return;
+            const bmi = (w / (h * h)).toFixed(1);
+            let status = "";
+            if(bmi < 18.5) status = currentLang === 'ar' ? 'نحافة (وزن منخفض)' : 'Underweight';
+            else if(bmi < 25) status = currentLang === 'ar' ? 'وزن مثالي وصحي ✨' : 'Normal Weight ✨';
+            else if(bmi < 30) status = currentLang === 'ar' ? 'زيادة في الوزن' : 'Overweight';
+            else status = currentLang === 'ar' ? 'سمنة' : 'Obese';
+
+            document.getElementById('bmiResult').innerText = currentLang === 'ar'
+                ? `مؤشر كتلة الجسم (BMI): ${bmi} — الحالة: ${status}`
+                : `BMI Score: ${bmi} — Status: ${status}`;
+        }
+
+        function generateUUID() {
+            const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                const r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+                return v.toString(16);
+            });
+            document.getElementById('uuidResult').innerText = uuid;
+        }
+
+        function generateGradient() {
+            const color1 = '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
+            const color2 = '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
+            const deg = Math.floor(Math.random() * 360);
+            const grad = `linear-gradient(${deg}deg, ${color1} 0%, ${color2} 100%)`;
+            document.getElementById('gradientBox').style.background = grad;
+            document.getElementById('gradientCode').innerText = `background: ${grad};`;
+        }
+
+        function formatJSON() {
+            const raw = document.getElementById('jsonInput').value;
+            const resBox = document.getElementById('jsonResult');
+            try {
+                const parsed = JSON.parse(raw);
+                resBox.style.color = '#34d399';
+                resBox.innerText = JSON.stringify(parsed, null, 4);
+            } catch(e) {
+                resBox.style.color = '#f87171';
+                resBox.innerText = currentLang === 'ar' ? 'خطأ: كود JSON غير صالح أو غير مكتمل!' : 'Error: Invalid JSON syntax!';
+            }
+        }
+
+        function generateQR() {
+            const text = encodeURIComponent(document.getElementById('qrInput').value);
+            if(!text) return;
+            const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${text}`;
+            document.getElementById('qrResult').innerHTML = `<img src="${qrUrl}" alt="QR Code" style="border-radius:8px; border:3px solid #374151;" /><br><span style="font-size:0.85rem; color:#9ca3af; margin-top:8px; display:block;">${currentLang==='ar'?'تم توليد الكود بنجاح':'QR Generated Successfully'}</span>`;
         }
     </script>
 </body>
