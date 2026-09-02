@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="htmlTag">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">منصة الأدوات التقنية الشاملة | Multi-Tech Tools Hub</title>
+    <script src="https://pl31151677.profitableratecpmnetwork.com/45/31/2e/45312ef3d7e3d4d0eada6e3ac8aa5eda.js"></script>
+    <meta name="google-site-verification" content="aTfWMIP5tv3_D3f-d3-3wGpg3hVF13Vbj91w2Kghd44" />
+    <style>
+        * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; }
+        body { background-color: #0f172a; color: #f8fafc; display: flex; flex-direction: column; min-height: 100vh; line-height: 1.6; }
+        
+        header { text-align: center; padding: 25px 20px; border-bottom: 1px solid #1e293b; background: #1e293b; position: relative; }
+        header h1 { color: #38bdf8; font-size: 2.2rem; margin-bottom: 8px; }
+        header p { color: #94a3b8; font-size: 0.95rem; }
+
+        .lang-btn {
+            position: absolute; top: 20px; left: 20px;
+            background: #0f172a; color: #38bdf8; border: 1px solid #38bdf8;
+            padding: 8px 18px; border-radius: 20px; cursor: pointer; font-weight: bold; transition: 0.3s;
+        }
+        [dir="ltr"] .lang-btn { left: auto; right: 20px; }
+        .lang-btn:hover { background: #38bdf8; color: #0f172a; }
+
+        .main-layout { display: flex; flex: 1; max-width: 1300px; width: 100%; margin: 0 auto; padding: 20px; gap: 20px; }
+        
+        /* القائمة الجانبية للتنقل بين الأساليب والأدوات */
+        .sidebar { width: 280px; background: #1e293b; border-radius: 12px; padding: 15px; border: 1px solid #334155; height: fit-content; }
+        .sidebar h3 { font-size: 1.1rem; color: #38bdf8; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 1px solid #334155; }
+        .nav-btn {
+            display: block; width: 100%; text-align: start; background: transparent; color: #94a3b8;
+            border: none; padding: 12px 15px; border-radius: 8px; cursor: pointer; font-size: 0.95rem; margin-bottom: 6px; transition: 0.2s;
+        }
+        [dir="ltr"] .nav-btn { text-align: left; }
+        .nav-btn:hover { background: #334155; color: #fff; }
+        .nav-btn.active { background: #0284c7; color: #fff; font-weight: bold; }
+
+        /* منطقة الواجهة المعروضة للأداة */
+        .content-area { flex: 1; background: #1e293b; border-radius: 12px; padding: 30px; border: 1px solid #334155; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+        .tool-view { display: none; }
+        .tool-view.active { display: block; }
+        .tool-view h2 { color: #f1f5f9; font-size: 1.6rem; margin-bottom: 20px; border-bottom: 2px solid #38bdf8; display: inline-block; padding-bottom: 6px; }
+
+        .input-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 8px; color: #94a3b8; font-size: 0.95rem; }
+        input, select, textarea { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #475569; background: #0f172a; color: #fff; font-size: 1rem; }
+        textarea { height: 120px; resize: vertical; }
+
+        .action-btn { background: #0284c7; color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 1rem; transition: 0.2s; margin-top: 10px; width: 100%; }
+        .action-btn:hover { background: #0369a1; }
+
+        .result-box { margin-top: 20px; padding: 18px; background: #0f172a; border-radius: 8px; word-break: break-all; font-size: 1rem; border: 1px dashed #38bdf8; }
+        .pass-output { font-size: 1.3rem; color: #4ade80; font-family: monospace; }
+        .color-preview { height: 80px; border-radius: 8px; margin-top: 15px; border: 2px solid #fff; }
+
+        footer { background: #1e293b; border-top: 1px solid #334155; text-align: center; padding: 20px; margin-top: auto; }
+        footer p { color: #94a3b8; font-size: 0.95rem; }
+        footer a { color: #38bdf8; text-decoration: none; font-weight: bold; margin-right: 5px; }
+        footer a:hover { text-decoration: underline; }
+
+        @media (max-width: 768px) {
+            .main-layout { flex-direction: column; }
+            .sidebar { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <button class="lang-btn" onclick="toggleLanguage()" id="langBtn">English</button>
+        <h1 id="headerTitle">منصة الأدوات التقنية الشاملة</h1>
+        <p id="headerDesc">مكتبة أدوات متكاملة وسريعة تعمل مباشرة في متصفحك بكل أمان.</p>
+    </header>
+
+    <div class="main-layout">
+        <!-- القائمة الجانبية لاختيار الأداة -->
+        <div class="sidebar">
+            <h3 id="sidebarTitle">الأدوات المتاحة</h3>
+            <button class="nav-btn active" onclick="switchTool('t1', this)" id="nav_t1">1. ضغط وتحويل الصور</button>
+            <button class="nav-btn" onclick="switchTool('t2', this)" id="nav_t2">2. مولد كلمات السر</button>
+            <button class="nav-btn" onclick="switchTool('t3', this)" id="nav_t3">3. عداد الكلمات والأحرف</button>
+            <button class="nav-btn" onclick="switchTool('t4', this)" id="nav_t4">4. حاسبة سرعة التحميل</button>
+            <button class="nav-btn" onclick="switchTool('t5', this)" id="nav_t5">5. محول صياغة النصوص</button>
+            <button class="nav-btn" onclick="switchTool('t6', this)" id="nav_t6">6. مولد ألوان التصميم</button>
+            <button class="nav-btn" onclick="switchTool('t7', this)" id="nav_t7">7. قارئ وحاسبة النصوص</button>
+            <button class="nav-btn" onclick="switchTool('t8', this)" id="nav_t8">8. مولد نصوص Lorim Ipsum</button>
+            <button class="nav-btn" onclick="switchTool('t9', this)" id="nav_t9">9. حاسبة التنسيق والعمر</button>
+            <button class="nav-btn" onclick="switchTool('t10', this)" id="nav_t10">10. مشفر فك التشفير Base64</button>
+        </div>
+
+        <!-- منطقة استعراض الأداة المحددة -->
+        <div class="content-area">
+            
+            <!-- أداة 1 -->
+            <div id="t1" class="tool-view active">
+                <h2 id="t1_title">أداة ضغط وتحويل صيغ الصور</h2>
+                <div class="input-group">
+                    <label id="t1_lbl1">اختر صورة من جهازك:</label>
+                    <input type="file" id="imageInput" accept="image/*">
+                </div>
+                <div class="input-group">
+                    <label id="t1_lbl2">الصيغة المستهدفة للتحويل:</label>
+                    <select id="formatSelect">
+                        <option value="image/jpeg">JPG</option>
+                        <option value="image/png">PNG</option>
+                        <option value="image/webp">WebP</option>
+                    </select>
+                </div>
+                <button class="action-btn" onclick="processImage()" id="t1_btn">معالجة وتحويل الصورة</button>
+                <div id="imageResult" class="result-box" style="display:none;"></div>
+            </div>
+
+            <!-- أداة 2 -->
+            <div id="t2" class="tool-view">
+                <h2 id="t2_title">مولد كلمات السر القوية والآمنة</h2>
+                <div class="input-group">
+                    <label id="t2_lbl">طول كلمة السر (عدد الخانات):</label>
+                    <input type="number" id="passLength" value="16" min="8" max="64">
+                </div>
+                <button class="action-btn" onclick="generatePassword()" id="t2_btn">توليد كلمة السر</button>
+                <div class="result-box">
+                    <span id="passResult" class="pass-output">...</span>
+                </div>
+            </div>
+
+            <!-- أداة 3 -->
+            <div id="t3" class="tool-view">
+                <h2 id="t3_title">عداد الكلمات والأحرف والأسطر</h2>
+                <div class="input-group">
+                    <textarea id="textCounterInput" oninput="countText()" placeholder="أدخل أو الصق النص هنا..."></textarea>
+                </div>
+                <div class="result-box" id="t3_res">الكلمات: 0 | الأحرف: 0 | الأسطر: 0</div>
+            </div>
+
+            <!-- أداة 4 -->
+            <div id="t4" class="tool-view">
+                <h2 id="t4_title">حاسبة تقدير وقت وسرعة التحميل</h2>
+                <div class="input-group">
+                    <label id="t4_lbl1">حجم الملف المراد تحكيله (GB):</label>
+                    <input type="number" id="fileSize" value="10">
+                </div>
+                <div class="input-group">
+                    <label id="t4_lbl2">سرعة الإنترنت لديك (Mbps):</label>
+                    <input type="number" id="netSpeed" value="20">
+                </div>
+                <button class="action-btn" onclick="calcDownload()" id="t4_btn">حساب الوقت المتوقع</button>
+                <div class="result-box" id="downloadResult">...</div>
+            </div>
+
+            <!-- أداة 5 -->
+            <div id="t5" class="tool-view">
+                <h2 id="t5_title">محول صياغة النصوص والأنماط</h2>
+                <div class="input-group">
+                    <input type="text" id="caseInput" placeholder="Enter or paste text here...">
+                </div>
+                <button class="action-btn" onclick="convertCase('upper')">UPPERCASE (حروف كبيرة)</button>
+                <button class="action-btn" onclick="convertCase('lower')" style="margin-top:8px;">lowercase (حروف صغيرة)</button>
+            </div>
+
+            <!-- أداة 6 -->
+            <div id="t6" class="tool-view">
+                <h2 id="t6_title">مولد الألوان العشوائية وأكواد التنسيق</h2>
+                <div id="colorBox" class="color-preview" style="background-color: #0284c7;"></div>
+                <button class="action-btn" onclick="generateColor()" id="t6_btn">توليد لون جديد</button>
+                <div class="result-box" id="colorCode" style="text-align:center; font-family:monospace; font-size:1.2rem;">#0284c7</div>
+            </div>
+
+            <!-- أداة 7 -->
+            <div id="t7" class="tool-view">
+                <h2 id="t7_title">حاسبة زَمَن قراءة النص المقدر</h2>
+                <div class="input-group">
+                    <textarea id="readTimeInput" oninput="calcReadTime()" placeholder="الصق النص لمعرفة وقت القراءة المتوقع..."></textarea>
+                </div>
+                <div class="result-box" id="readTimeResult">وقت القراءة المتوقع: 0 ثانية</div>
+            </div>
+
+            <!-- أداة 8 -->
+            <div id="t8" class="tool-view">
+                <h2 id="t8_title">مولد نصوص تجريبية (Lorem Ipsum)</h2>
+                <div class="input-group">
+                    <label id="t8_lbl">عدد الفقرات المطلوب توليدها:</label>
+                    <input type="number" id="loremCount" value="2" min="1" max="10">
+                </div>
+                <button class="action-btn" onclick="generateLorem()" id="t8_btn">توليد النص التجريبي</button>
+                <div class="result-box" id="loremResult">...</div>
+            </div>
+
+            <!-- أداة 9 -->
+            <div id="t9" class="tool-view">
+                <h2 id="t9_title">حاسبة العمر والدقائق بالتفصيل</h2>
+                <div class="input-group">
+                    <label id="t9_lbl">تاريخ ميلادك:</label>
+                    <input type="date" id="birthDate">
+                </div>
+                <button class="action-btn" onclick="calcAge()" id="t9_btn">حساب العمر</button>
+                <div class="result-box" id="ageResult">...</div>
+            </div>
+
+            <!-- أداة 10 -->
+            <div id="t10" class="tool-view">
+                <h2 id="t10_title">مشفّر ومفكك نصوص Base64</h2>
+                <div class="input-group">
+                    <input type="text" id="base64Input" placeholder="أدخل النص هنا للتشفير أو فك التشفير...">
+                </div>
+                <button class="action-btn" onclick="encodeBase64()">تشفير إلى Base64</button>
+                <button class="action-btn" onclick="decodeBase64()" style="margin-top:8px; background:#0f766e;">فك تشفير Base64</button>
+                <div class="result-box" id="base64Result">...</div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p id="footerText">تطوير وتصميم بواسطة: <strong>ياسين</strong> | للتواصل عبر إنستغرام: <a href="https://instagram.com/yacine_chahta" target="_blank">@yacine_chahta</a></p>
+    </footer>
+
+    <script>
+        let currentLang = 'ar';
+
+        const translations = {
+            ar: {
+                title: "منصة الأدوات التقنية الشاملة",
+                desc: "مكتبة أدوات متكاملة وسريعة تعمل مباشرة في متصفحك بكل أمان.",
+                btnLang: "English", dir: "rtl", sidebarTitle: "الأدوات المتاحة",
+                footerText: 'تطوير وتصميم بواسطة: <strong>ياسين</strong> | للتواصل عبر إنستغرام: <a href="https://instagram.com/yacine_chahta" target="_blank">@yacine_chahta</a>',
+                nav_t1: "1. ضغط وتحويل الصور", nav_t2: "2. مولد كلمات السر", nav_t3: "3. عداد الكلمات والأحرف",
+                nav_t4: "4. حاسبة سرعة التحميل", nav_t5: "5. محول صياغة النصوص", nav_t6: "6. مولد ألوان التصميم",
+                nav_t7: "7. حاسبة وقت القراءة", nav_t8: "8. مولد نصوص Lorem", nav_t9: "9. حاسبة العمر بالتفصيل", nav_t10: "10. مشفر فك التشفير Base64",
+                t1_title: "أداة ضغط وتحويل صيغ الصور", t1_lbl1: "اختر صورة من جهازك:", t1_lbl2: "الصيغة المستهدفة للتحويل:", t1_btn: "معالجة وتحويل الصورة",
+                t2_title: "مولد كلمات السر القوية والآمنة", t2_lbl: "طول كلمة السر (عدد الخانات):", t2_btn: "توليد كلمة السر",
+                t3_title: "عداد الكلمات والأحرف والأسطر", t3_ph: "أدخل أو الصق النص هنا...",
+                t4_title: "حاسبة تقدير وقت وسرعة التحميل", t4_lbl1: "حجم الملف المراد تحكيله (GB):", t4_lbl2: "سرعة الإنترنت لديك (Mbps):", t4_btn: "حساب الوقت المتوقع",
+                t5_title: "محول صياغة النصوص والأنماط",
+                t6_title: "مولد الألوان العشوائية وأكواد التنسيق", t6_btn: "توليد لون جديد",
+                t7_title: "حاسبة زَمَن قراءة النص المقدر", t7_ph: "الصق النص لمعرفة وقت القراءة المتوقع...",
+                t8_title: "مولد نصوص تجريبية (Lorem Ipsum)", t8_lbl: "عدد الفقرات المطلوب توليدها:", t8_btn: "توليد النص التجريبي",
+                t9_title: "حاسبة العمر والدقائق بالتفصيل", t9_lbl: "تاريخ ميلادك:", t9_btn: "حساب العمر"
+            },
+            en: {
+                title: "Multi-Tech Tools Hub",
+                desc: "A fast, secure, and free suite of browser utility tools.",
+                btnLang: "العربية", dir: "ltr", sidebarTitle: "Available Tools",
+                footerText: 'Developed by: <strong>Yacine</strong> | Instagram: <a href="https://instagram.com/yacine_chahta" target="_blank">@yacine_chahta</a>',
+                nav_t1: "1. Image Converter", nav_t2: "2. Password Generator", nav_t3: "3. Word & Char Counter",
+                nav_t4: "4. Download Speed Calc", nav_t5: "5. Text Case Converter", nav_t6: "6. Random Color Generator",
+                nav_t7: "7. Reading Time Calc", nav_t8: "8. Lorem Ipsum Generator", nav_t9: "9. Detailed Age Calculator", nav_t10: "10. Base64 Encoder/Decoder",
+                t1_title: "Image Converter & Compressor", t1_lbl1: "Select Image:", t1_lbl2: "Target Format:", t1_btn: "Process Image",
+                t2_title: "Strong Password Generator", t2_lbl: "Password Length:", t2_btn: "Generate Password",
+                t3_title: "Word, Character & Line Counter", t3_ph: "Type or paste text here...",
+                t4_title: "Download Speed Estimator", t4_lbl1: "File Size (GB):", t4_lbl2: "Internet Speed (Mbps):", t4_btn: "Calculate Time",
+                t5_title: "Text Case Style Converter",
+                t6_title: "Random Color Generator", t6_btn: "Generate New Color",
+                t7_title: "Estimated Reading Time Calculator", t7_ph: "Paste text to estimate reading time...",
+                t8_title: "Lorem Ipsum Text Generator", t8_lbl: "Number of Paragraphs:", t8_btn: "Generate Text",
+                t9_title: "Detailed Age Calculator", t9_lbl: "Your Birth Date:", t9_btn: "Calculate Age"
+            }
+        };
+
+        function switchTool(toolId, btn) {
+            document.querySelectorAll('.tool-view').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.nav-btn').forEach(el => el.classList.remove('active'));
+            document.getElementById(toolId).classList.add('active');
+            btn.classList.add('active');
+        }
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            const data = translations[currentLang];
+
+            document.getElementById('htmlTag').dir = data.dir;
+            document.getElementById('langBtn').innerText = data.btnLang;
+            document.getElementById('headerTitle').innerText = data.title;
+            document.getElementById('headerDesc').innerText = data.desc;
+            document.getElementById('sidebarTitle').innerText = data.sidebarTitle;
+            document.getElementById('footerText').innerHTML = data.footerText;
+
+            for(let i=1; i<=10; i++) {
+                if(data[`nav_t${i}`]) document.getElementById(`nav_t${i}`).innerText = data[`nav_t${i}`];
+                if(data[`t${i}_title`]) document.getElementById(`t${i}_title`).innerText = data[`t${i}_title`];
+            }
+
+            document.getElementById('t1_lbl1').innerText = data.t1_lbl1;
+            document.getElementById('t1_lbl2').innerText = data.t1_lbl2;
+            document.getElementById('t1_btn').innerText = data.t1_btn;
+            document.getElementById('t2_lbl').innerText = data.t2_lbl;
+            document.getElementById('t2_btn').innerText = data.t2_btn;
+            document.getElementById('textCounterInput').placeholder = data.t3_ph;
+            document.getElementById('t4_lbl1').innerText = data.t4_lbl1;
+            document.getElementById('t4_lbl2').innerText = data.t4_lbl2;
+            document.getElementById('t4_btn').innerText = data.t4_btn;
+            document.getElementById('t6_btn').innerText = data.t6_btn;
+            document.getElementById('readTimeInput').placeholder = data.t7_ph;
+            document.getElementById('t8_lbl').innerText = data.t8_lbl;
+            document.getElementById('t8_btn').innerText = data.t8_btn;
+            document.getElementById('t9_lbl').innerText = data.t9_lbl;
+            document.getElementById('t9_btn').innerText = data.t9_btn;
+        }
+
+        // Logic for Tools
+        function processImage() {
+            const input = document.getElementById('imageInput');
+            const format = document.getElementById('formatSelect').value;
+            const resultBox = document.getElementById('imageResult');
+            if(!input.files[0]) return alert(currentLang==='ar'?'اختر صورة أولاً!':'Select an image first!');
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = new Image();
+                img.src = e.target.result;
+                img.onload = function() {
+                    const canvas = document.createElement('canvas');
+                    canvas.width = img.width; canvas.height = img.height;
+                    canvas.getContext('2d').drawImage(img, 0, 0);
+                    const link = document.createElement('a');
+                    link.href = canvas.toDataURL(format, 0.8);
+                    link.download = `converted-image.${format.split('/')[1]}`;
+                    link.innerText = currentLang === 'ar' ? 'تحميل الصورة المعالجة' : 'Download Image';
+                    link.style.color = '#38bdf8';
+                    resultBox.innerHTML = ''; resultBox.appendChild(link); resultBox.style.display = 'block';
+                }
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+
+        function generatePassword() {
+            const len = document.getElementById('passLength').value;
+            const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+";
+            let res = "";
+            for(let i=0; i<len; i++) res += chars.charAt(Math.floor(Math.random()*chars.length));
+            document.getElementById('passResult').innerText = res;
+        }
+
+        function countText() {
+            const val = document.getElementById('textCounterInput').value;
+            const words = val.trim() ? val.trim().split(/\s+/).length : 0;
+            const chars = val.length;
+            const lines = val ? val.split(/\r\n|\r|\n/).length : 0;
+            document.getElementById('t3_res').innerText = currentLang === 'ar' 
+                ? `الكلمات: ${words} | الأحرف: ${chars} | الأسطر: ${lines}`
+                : `Words: ${words} | Chars: ${chars} | Lines: ${lines}`;
+        }
+
+        function calcDownload() {
+            const sizeGB = parseFloat(document.getElementById('fileSize').value);
+            const speedMbps = parseFloat(document.getElementById('netSpeed').value);
+            if(!sizeGB || !speedMbps) return;
+            const totalSec = Math.round((sizeGB * 1024) / (speedMbps / 8));
+            const mins = Math.floor(totalSec / 60); const secs = totalSec % 60;
+            document.getElementById('downloadResult').innerText = currentLang === 'ar'
+                ? `الوقت المقدر: ${mins} دقيقة و ${secs} ثانية`
+                : `Estimated Time: ${mins}m ${secs}s`;
+        }
+
+        function convertCase(type) {
+            const input = document.getElementById('caseInput');
+            if(type==='upper') input.value = input.value.toUpperCase();
+            if(type==='lower') input.value = input.value.toLowerCase();
+        }
+
+        function generateColor() {
+            const hex = '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
+            document.getElementById('colorBox').style.backgroundColor = hex;
+            document.getElementById('colorCode').innerText = hex;
+        }
+
+        function calcReadTime() {
+            const text = document.getElementById('readTimeInput').value.trim();
+            const words = text ? text.split(/\s+/).length : 0;
+            const seconds = Math.ceil((words / 200) * 60);
+            document.getElementById('readTimeResult').innerText = currentLang === 'ar'
+                ? `وقت القراءة المتوقع: ${seconds} ثانية`
+                : `Est. Reading Time: ${seconds} seconds`;
+        }
+
+        function generateLorem() {
+            const count = document.getElementById('loremCount').value;
+            const loremText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ";
+            let res = "";
+            for(let i=0; i<count; i++) res += `<p style="margin-bottom:10px;">${loremText}</p>`;
+            document.getElementById('loremResult').innerHTML = res;
+        }
+
+        function calcAge() {
+            const dateVal = document.getElementById('birthDate').value;
+            if(!dateVal) return;
+            const birth = new Date(dateVal);
+            const diff = new Date() - birth;
+            const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25));
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            document.getElementById('ageResult').innerText = currentLang === 'ar'
+                ? `العمر: ${years} سنة (ما يعادل حوالي ${days} يوم)`
+                : `Age: ${years} years old (~${days} days)`;
+        }
+
+        function encodeBase64() {
+            const val = document.getElementById('base64Input').value;
+            document.getElementById('base64Result').innerText = btoa(val);
+        }
+
+        function decodeBase64() {
+            try {
+                const val = document.getElementById('base64Input').value;
+                document.getElementById('base64Result').innerText = atob(val);
+            } catch(e) {
+                document.getElementById('base64Result').innerText = "Error: Invalid Base64 string!";
+            }
+        }
+    </script>
+</body>
+</html>
