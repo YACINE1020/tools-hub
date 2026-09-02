@@ -3,69 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منصة الأدوات التقنية المتقدمة | Multi-Tech Tools Hub</title>
+    <title>منصة الأدوات الذكية المتقدمة | CyberTools Hub</title>
     <script src="https://pl31155747.profitableratecpmnetwork.com/f1/13/ac/f113ac1625ae6b035687cd512a4e75ac.js"></script>
     <meta name="google-site-verification" content="atFWMIP5tv3_D3f-d3-3wGpg3hVF13vBj91w2Kghd44" />
     <link rel="icon" type="image/jpeg" href="favicon.jpg">
     <style>
-        * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; }
-        body { background-color: #090d16; color: #f1f5f9; display: flex; flex-direction: column; min-height: 100vh; line-height: 1.6; }
-        
-        header { text-align: center; padding: 30px 20px; border-bottom: 1px solid #1e293b; background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%); position: relative; box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
-        header h1 { color: #818cf8; font-size: 2.4rem; margin-bottom: 8px; text-shadow: 0 2px 10px rgba(129, 140, 248, 0.3); }
-        header p { color: #94a3b8; font-size: 1rem; }
+        * { box-sizing: border-box; font-family: 'Inter', system-ui, -apple-system, sans-serif; margin: 0; padding: 0; }
+        body { background-color: #030712; color: #f3f4f6; display: flex; flex-direction: column; min-height: 100vh; line-height: 1.6; }
+
+        /* الهيدر العلوي */
+        header { text-align: center; padding: 40px 20px; background: radial-gradient(circle at center, #0f172a 0%, #030712 100%); border-bottom: 1px solid #1f2937; position: relative; }
+        header h1 { color: #38bdf8; font-size: 2.6rem; margin-bottom: 10px; font-weight: 800; text-shadow: 0 0 25px rgba(56, 189, 248, 0.3); }
+        header p { color: #9ca3af; font-size: 1.1rem; }
 
         .lang-btn {
-            position: absolute; top: 25px; left: 25px;
-            background: #1e1b4b; color: #818cf8; border: 1px solid #6366f1;
-            padding: 8px 20px; border-radius: 25px; cursor: pointer; font-weight: bold; transition: 0.3s;
+            position: absolute; top: 30px; left: 30px;
+            background: #0f172a; color: #38bdf8; border: 1px solid #0284c7;
+            padding: 8px 22px; border-radius: 30px; cursor: pointer; font-weight: bold; transition: 0.3s;
         }
-        [dir="ltr"] .lang-btn { left: auto; right: 25px; }
-        .lang-btn:hover { background: #6366f1; color: #fff; box-shadow: 0 0 12px rgba(99, 102, 241, 0.5); }
+        [dir="ltr"] .lang-btn { left: auto; right: 30px; }
+        .lang-btn:hover { background: #0284c7; color: #fff; box-shadow: 0 0 15px rgba(2, 132, 199, 0.6); }
 
-        .main-layout { display: flex; flex: 1; max-width: 1400px; width: 100%; margin: 0 auto; padding: 25px; gap: 25px; }
+        /* الهيكل الرئيسي بنمط شبكة البطاقات */
+        .dashboard-container { max-width: 1400px; width: 100%; margin: 30px auto; padding: 0 20px; flex: 1; }
         
-        /* القائمة الجانبية المحدثة */
-        .sidebar { width: 320px; background: #111827; border-radius: 16px; padding: 15px; border: 1px solid #1f2937; height: fit-content; max-height: 80vh; overflow-y: auto; box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
-        .sidebar::-webkit-scrollbar { width: 6px; }
-        .sidebar::-webkit-scrollbar-thumb { background: #374151; border-radius: 4px; }
-        .sidebar h3 { font-size: 1.15rem; color: #818cf8; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 1px solid #1f2937; }
-        
-        .nav-btn {
-            display: block; width: 100%; text-align: start; background: transparent; color: #9ca3af;
-            border: none; padding: 11px 15px; border-radius: 10px; cursor: pointer; font-size: 0.93rem; margin-bottom: 5px; transition: 0.2s;
+        .search-filter-box { margin-bottom: 30px; text-align: center; }
+        .search-filter-box input { width: 100%; max-width: 500px; padding: 14px 20px; border-radius: 30px; border: 1px solid #374151; background: #0b0f19; color: #fff; font-size: 1.05rem; outline: none; transition: 0.3s; }
+        .search-filter-box input:focus { border-color: #38bdf8; box-shadow: 0 0 15px rgba(56, 189, 248, 0.2); }
+
+        .tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 25px; }
+
+        /* تصميم بطاقة الأداة (Card) */
+        .tool-card {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid #1e293b;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
-        [dir="ltr"] .nav-btn { text-align: left; }
-        .nav-btn:hover { background: #1f2937; color: #fff; }
-        .nav-btn.active { background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%); color: #fff; font-weight: bold; box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4); }
+        .tool-card:hover { transform: translateY(-5px); border-color: #38bdf8; box-shadow: 0 15px 40px rgba(56, 189, 248, 0.15); }
+        .tool-card h3 { color: #f8fafc; font-size: 1.25rem; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1e293b; padding-bottom: 10px; }
 
-        /* منطقة واجهة عرض الأدوات */
-        .content-area { flex: 1; background: #111827; border-radius: 16px; padding: 35px; border: 1px solid #1f2937; box-shadow: 0 8px 30px rgba(0,0,0,0.4); }
-        .tool-view { display: none; }
-        .tool-view.active { display: block; }
-        .tool-view h2 { color: #f3f4f6; font-size: 1.7rem; margin-bottom: 25px; border-bottom: 2px solid #6366f1; display: inline-block; padding-bottom: 8px; }
+        .input-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 6px; color: #94a3b8; font-size: 0.9rem; font-weight: 500; }
+        input, select, textarea { width: 100%; padding: 10px 14px; border-radius: 10px; border: 1px solid #334155; background: #020617; color: #fff; font-size: 0.95rem; transition: 0.2s; }
+        input:focus, select:focus, textarea:focus { border-color: #38bdf8; outline: none; box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15); }
+        textarea { height: 90px; resize: vertical; }
 
-        .input-group { margin-bottom: 18px; }
-        label { display: block; margin-bottom: 8px; color: #9ca3af; font-size: 0.95rem; font-weight: 500; }
-        input, select, textarea { width: 100%; padding: 12px 15px; border-radius: 10px; border: 1px solid #374151; background: #030712; color: #fff; font-size: 1rem; transition: all 0.2s; }
-        input:focus, select:focus, textarea:focus { border-color: #6366f1; outline: none; box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15); }
-        textarea { height: 130px; resize: vertical; }
+        .action-btn { background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%); color: white; border: none; padding: 11px 18px; border-radius: 10px; cursor: pointer; font-weight: bold; font-size: 0.95rem; transition: 0.2s; width: 100%; margin-top: 5px; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3); }
+        .action-btn:hover { background: linear-gradient(135deg, #0369a1 0%, #1d4ed8 100%); }
 
-        .action-btn { background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%); color: white; border: none; padding: 13px 20px; border-radius: 10px; cursor: pointer; font-weight: bold; font-size: 1rem; transition: 0.2s; margin-top: 10px; width: 100%; box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3); }
-        .action-btn:hover { background: linear-gradient(135deg, #4338ca 0%, #4f46e5 100%); transform: translateY(-1px); }
+        .result-box { margin-top: 15px; padding: 15px; background: #020617; border-radius: 10px; word-break: break-all; font-size: 0.95rem; border: 1px dashed #334155; }
+        .pass-output { font-size: 1.15rem; color: #34d399; font-family: monospace; }
+        .color-preview { height: 70px; border-radius: 8px; margin-top: 10px; border: 1px solid #334155; transition: background-color 0.3s; }
 
-        .result-box { margin-top: 20px; padding: 20px; background: #030712; border-radius: 10px; word-break: break-all; font-size: 1rem; border: 1px dashed #374151; }
-        .pass-output { font-size: 1.25rem; color: #34d399; font-family: monospace; letter-spacing: 1px; }
-        .color-preview { height: 90px; border-radius: 10px; margin-top: 15px; border: 2px solid #374151; transition: background-color 0.3s; }
-
-        footer { background: #0b0f19; border-top: 1px solid #1f2937; text-align: center; padding: 25px; margin-top: auto; }
-        footer p { color: #9ca3af; font-size: 0.95rem; }
-        footer a { color: #818cf8; text-decoration: none; font-weight: bold; margin-right: 5px; }
+        footer { background: #020617; border-top: 1px solid #1f2937; text-align: center; padding: 25px; margin-top: auto; }
+        footer p { color: #94a3b8; font-size: 0.95rem; }
+        footer a { color: #38bdf8; text-decoration: none; font-weight: bold; margin-right: 5px; }
         footer a:hover { text-decoration: underline; }
 
-        @media (max-width: 900px) {
-            .main-layout { flex-direction: column; }
-            .sidebar { width: 100%; max-height: none; }
+        @media (max-width: 768px) {
+            .tools-grid { grid-template-columns: 1fr; }
             .lang-btn { top: 20px; padding: 6px 14px; font-size: 0.85rem; }
         }
     </style>
@@ -74,201 +77,191 @@
 
     <header>
         <button class="lang-btn" onclick="toggleLanguage()" id="langBtn">English</button>
-        <h1 id="headerTitle">منصة الأدوات التقنية المتقدمة</h1>
-        <p id="headerDesc">مكتبة أدوات احترافية متكاملة تعمل مباشرة وسريعة في متصفحك بكل أمان.</p>
+        <h1 id="headerTitle">منصة الأدوات الذكية المتقدمة</h1>
+        <p id="headerDesc">لوحة تحكم تفاعلية متكاملة تضم 15 أداة برمجية وتقنية سريعة تعمل بالكامل في متصفحك.</p>
     </header>
 
-    <div class="main-layout">
-        <!-- القائمة الجانبية للأدوات الـ 15 -->
-        <div class="sidebar">
-            <h3 id="sidebarTitle">الأدوات المتاحة (15 أداة)</h3>
-            <button class="nav-btn active" onclick="switchTool('t1', this)" id="nav_t1">1. ضغط وتحويل الصور</button>
-            <button class="nav-btn" onclick="switchTool('t2', this)" id="nav_t2">2. مولد كلمات السر</button>
-            <button class="nav-btn" onclick="switchTool('t3', this)" id="nav_t3">3. عداد الكلمات والأحرف</button>
-            <button class="nav-btn" onclick="switchTool('t4', this)" id="nav_t4">4. حاسبة سرعة التحميل</button>
-            <button class="nav-btn" onclick="switchTool('t5', this)" id="nav_t5">5. محول صياغة النصوص</button>
-            <button class="nav-btn" onclick="switchTool('t6', this)" id="nav_t6">6. مولد ألوان التصميم</button>
-            <button class="nav-btn" onclick="switchTool('t7', this)" id="nav_t7">7. قارئ وحاسبة النصوص</button>
-            <button class="nav-btn" onclick="switchTool('t8', this)" id="nav_t8">8. مولد نصوص Lorem Ipsum</button>
-            <button class="nav-btn" onclick="switchTool('t9', this)" id="nav_t9">9. حاسبة العمر بالتفصيل</button>
-            <button class="nav-btn" onclick="switchTool('t10', this)" id="nav_t10">10. مشفر فك التشفير Base64</button>
-            <button class="nav-btn" onclick="switchTool('t11', this)" id="nav_t11">11. حاسبة مؤشر كتلة الجسم BMI</button>
-            <button class="nav-btn" onclick="switchTool('t12', this)" id="nav_t12">12. مولد المعرفات الفريدة UUID</button>
-            <button class="nav-btn" onclick="switchTool('t13', this)" id="nav_t13">13. مولد التدرجات اللونية CSS</button>
-            <button class="nav_t14', this)" onclick="switchTool('t14', this)" id="nav_t14">14. منسق وصانع أكواد JSON</button>
-            <button class="nav-btn" onclick="switchTool('t15', this)" id="nav_t15">15. مولد رمز الاستجابة QR Code</button>
+    <div class="dashboard-container">
+        <div class="search-filter-box">
+            <input type="text" id="searchInput" onkeyup="filterTools()" placeholder="ابحث عن أداة معينة...">
         </div>
 
-        <!-- منطقة العرض والأدوات -->
-        <div class="content-area">
+        <div class="tools-grid" id="toolsGrid">
             
             <!-- أداة 1 -->
-            <div id="t1" class="tool-view active">
-                <h2 id="t1_title">أداة ضغط وتحويل صيغ الصور</h2>
-                <div class="input-group">
-                    <label id="t1_lbl1">اختر صورة من جهازك:</label>
-                    <input type="file" id="imageInput" accept="image/*">
+            <div class="tool-card" data-name="ضغط تحويل الصور image converter compress">
+                <h3 id="t1_title">1. ضغط وتحويل الصور</h3>
+                <div>
+                    <div class="input-group"><label id="t1_lbl1">اختر صورة:</label><input type="file" id="imageInput" accept="image/*"></div>
+                    <div class="input-group"><label id="t1_lbl2">الصيغة المستهدفة:</label><select id="formatSelect"><option value="image/jpeg">JPG</option><option value="image/png">PNG</option><option value="image/webp">WebP</option></select></div>
                 </div>
-                <div class="input-group">
-                    <label id="t1_lbl2">الصيغة المستهدفة للتحويل:</label>
-                    <select id="formatSelect">
-                        <option value="image/jpeg">JPG</option>
-                        <option value="image/png">PNG</option>
-                        <option value="image/webp">WebP</option>
-                    </select>
+                <div>
+                    <button class="action-btn" onclick="processImage()" id="t1_btn">معالجة وتحويل</button>
+                    <div id="imageResult" class="result-box" style="display:none;"></div>
                 </div>
-                <button class="action-btn" onclick="processImage()" id="t1_btn">معالجة وتحويل الصورة</button>
-                <div id="imageResult" class="result-box" style="display:none;"></div>
             </div>
 
             <!-- أداة 2 -->
-            <div id="t2" class="tool-view">
-                <h2 id="t2_title">مولد كلمات السر القوية والآمنة</h2>
-                <div class="input-group">
-                    <label id="t2_lbl">طول كلمة السر (عدد الخانات):</label>
-                    <input type="number" id="passLength" value="16" min="8" max="64">
+            <div class="tool-card" data-name="مولد كلمات السر password generator">
+                <h3 id="t2_title">2. مولد كلمات السر القوية</h3>
+                <div>
+                    <div class="input-group"><label id="t2_lbl">طول كلمة السر:</label><input type="number" id="passLength" value="16" min="8" max="64"></div>
                 </div>
-                <button class="action-btn" onclick="generatePassword()" id="t2_btn">توليد كلمة السر</button>
-                <div class="result-box">
-                    <span id="passResult" class="pass-output">...</span>
+                <div>
+                    <button class="action-btn" onclick="generatePassword()" id="t2_btn">توليد كلمة السر</button>
+                    <div class="result-box"><span id="passResult" class="pass-output">...</span></div>
                 </div>
             </div>
 
             <!-- أداة 3 -->
-            <div id="t3" class="tool-view">
-                <h2 id="t3_title">عداد الكلمات والأحرف والأسطر</h2>
-                <div class="input-group">
-                    <textarea id="textCounterInput" oninput="countText()" placeholder="أدخل أو الصق النص هنا..."></textarea>
+            <div class="tool-card" data-name="عداد الكلمات والأحرف counter">
+                <h3 id="t3_title">3. عداد الكلمات والأحرف</h3>
+                <div>
+                    <div class="input-group"><textarea id="textCounterInput" oninput="countText()" placeholder="أدخل النص هنا..."></textarea></div>
                 </div>
                 <div class="result-box" id="t3_res">الكلمات: 0 | الأحرف: 0 | الأسطر: 0</div>
             </div>
 
             <!-- أداة 4 -->
-            <div id="t4" class="tool-view">
-                <h2 id="t4_title">حاسبة تقدير وقت وسرعة التحميل</h2>
-                <div class="input-group">
-                    <label id="t4_lbl1">حجم الملف المراد تحميله (GB):</label>
-                    <input type="number" id="fileSize" value="10">
+            <div class="tool-card" data-name="حاسبة سرعة التحميل download speed calculator">
+                <h3 id="t4_title">4. حاسبة سرعة التحميل</h3>
+                <div>
+                    <div class="input-group"><label id="t4_lbl1">حجم الملف (GB):</label><input type="number" id="fileSize" value="10"></div>
+                    <div class="input-group"><label id="t4_lbl2">سرعة النت (Mbps):</label><input type="number" id="netSpeed" value="20"></div>
                 </div>
-                <div class="input-group">
-                    <label id="t4_lbl2">سرعة الإنترنت لديك (Mbps):</label>
-                    <input type="number" id="netSpeed" value="20">
+                <div>
+                    <button class="action-btn" onclick="calcDownload()" id="t4_btn">حساب الوقت</button>
+                    <div class="result-box" id="downloadResult">...</div>
                 </div>
-                <button class="action-btn" onclick="calcDownload()" id="t4_btn">حساب الوقت المتوقع</button>
-                <div class="result-box" id="downloadResult">...</div>
             </div>
 
             <!-- أداة 5 -->
-            <div id="t5" class="tool-view">
-                <h2 id="t5_title">محول صياغة النصوص والأنماط</h2>
-                <div class="input-group">
-                    <input type="text" id="caseInput" placeholder="أدخل النص هنا لتغيير حالة الأحرف...">
+            <div class="tool-card" data-name="محول صياغة النصوص case converter">
+                <h3 id="t5_title">5. محول صيغة النصوص</h3>
+                <div>
+                    <div class="input-group"><input type="text" id="caseInput" placeholder="أدخل النص هنا..."></div>
                 </div>
-                <button class="action-btn" onclick="convertCase('upper')">UPPERCASE (حروف كبيرة)</button>
-                <button class="action-btn" onclick="convertCase('lower')" style="margin-top:8px; background:#475569;">lowercase (حروف صغيرة)</button>
+                <div style="display: flex; gap: 8px;">
+                    <button class="action-btn" onclick="convertCase('upper')">UPPER</button>
+                    <button class="action-btn" onclick="convertCase('lower')" style="background: #334155;">lower</button>
+                </div>
             </div>
 
             <!-- أداة 6 -->
-            <div id="t6" class="tool-view">
-                <h2 id="t6_title">مولد الألوان العشوائية وأكواد التنسيق</h2>
-                <div id="colorBox" class="color-preview" style="background-color: #4f46e5;"></div>
-                <button class="action-btn" onclick="generateColor()" id="t6_btn" style="margin-top: 15px;">توليد لون جديد</button>
-                <div class="result-box" id="colorCode" style="text-align:center; font-family:monospace; font-size:1.2rem;">#4f46e5</div>
+            <div class="tool-card" data-name="مولد ألوان التصميم color generator">
+                <h3 id="t6_title">6. مولد ألوان التصميم</h3>
+                <div>
+                    <div id="colorBox" class="color-preview" style="background-color: #0284c7;"></div>
+                </div>
+                <div>
+                    <button class="action-btn" onclick="generateColor()" id="t6_btn">توليد لون جديد</button>
+                    <div class="result-box" id="colorCode" style="text-align:center; font-family:monospace;">#0284c7</div>
+                </div>
             </div>
 
             <!-- أداة 7 -->
-            <div id="t7" class="tool-view">
-                <h2 id="t7_title">حاسبة زَمَن قراءة النص المقدر</h2>
-                <div class="input-group">
-                    <textarea id="readTimeInput" oninput="calcReadTime()" placeholder="الصق النص لمعرفة وقت القراءة المتوقع..."></textarea>
+            <div class="tool-card" data-name="حاسبة وقت القراءة reading time">
+                <h3 id="t7_title">7. حاسبة وقت القراءة</h3>
+                <div>
+                    <div class="input-group"><textarea id="readTimeInput" oninput="calcReadTime()" placeholder="الصق النص هنا..."></textarea></div>
                 </div>
-                <div class="result-box" id="readTimeResult">وقت القراءة المتوقع: 0 ثانية</div>
+                <div class="result-box" id="readTimeResult">الوقت المقدر: 0 ثانية</div>
             </div>
 
             <!-- أداة 8 -->
-            <div id="t8" class="tool-view">
-                <h2 id="t8_title">مولد نصوص تجريبية (Lorem Ipsum)</h2>
-                <div class="input-group">
-                    <label id="t8_lbl">عدد الفقرات المطلوب توليدها:</label>
-                    <input type="number" id="loremCount" value="2" min="1" max="10">
+            <div class="tool-card" data-name="مولد نصوص تجريبية lorem ipsum">
+                <h3 id="t8_title">8. مولد نصوص Lorem Ipsum</h3>
+                <div>
+                    <div class="input-group"><label id="t8_lbl">عدد الفقرات:</label><input type="number" id="loremCount" value="2" min="1" max="5"></div>
                 </div>
-                <button class="action-btn" onclick="generateLorem()" id="t8_btn">توليد النص التجريبي</button>
-                <div class="result-box" id="loremResult">...</div>
+                <div>
+                    <button class="action-btn" onclick="generateLorem()" id="t8_btn">توليد النص</button>
+                    <div class="result-box" id="loremResult" style="max-height: 80px; overflow-y: auto;">...</div>
+                </div>
             </div>
 
             <!-- أداة 9 -->
-            <div id="t9" class="tool-view">
-                <h2 id="t9_title">حاسبة العمر والدقائق بالتفصيل</h2>
-                <div class="input-group">
-                    <label id="t9_lbl">تاريخ ميلادك:</label>
-                    <input type="date" id="birthDate">
+            <div class="tool-card" data-name="حاسبة العمر age calculator">
+                <h3 id="t9_title">9. حاسبة العمر بالتفصيل</h3>
+                <div>
+                    <div class="input-group"><label id="t9_lbl">تاريخ الميلاد:</label><input type="date" id="birthDate"></div>
                 </div>
-                <button class="action-btn" onclick="calcAge()" id="t9_btn">حساب العمر</button>
-                <div class="result-box" id="ageResult">...</div>
+                <div>
+                    <button class="action-btn" onclick="calcAge()" id="t9_btn">حساب العمر</button>
+                    <div class="result-box" id="ageResult">...</div>
+                </div>
             </div>
 
             <!-- أداة 10 -->
-            <div id="t10" class="tool-view">
-                <h2 id="t10_title">مشفّر ومفكك نصوص Base64</h2>
-                <div class="input-group">
-                    <input type="text" id="base64Input" placeholder="أدخل النص هنا للتشفير أو فك التشفير...">
+            <div class="tool-card" data-name="مشفّر ومفكك نصوص base64">
+                <h3 id="t10_title">10. مشفر Base64</h3>
+                <div>
+                    <div class="input-group"><input type="text" id="base64Input" placeholder="أدخل النص..."></div>
                 </div>
-                <button class="action-btn" onclick="encodeBase64()">تشفير إلى Base64</button>
-                <button class="action-btn" onclick="decodeBase64()" style="margin-top:8px; background:#475569;">فك تشفير Base64</button>
-                <div class="result-box" id="base64Result">...</div>
+                <div style="display: flex; gap: 8px;">
+                    <button class="action-btn" onclick="encodeBase64()">تشفير</button>
+                    <button class="action-btn" onclick="decodeBase64()" style="background: #334155;">فك تشفير</button>
+                </div>
+                <div class="result-box" id="base64Result" style="margin-top:10px;">...</div>
             </div>
 
-            <!-- أداة 11: مؤشر كتلة الجسم BMI -->
-            <div id="t11" class="tool-view">
-                <h2 id="t11_title">حاسبة مؤشر كتلة الجسم (BMI)</h2>
-                <div class="input-group">
-                    <label id="t11_lbl1">الوزن (كغ):</label>
-                    <input type="number" id="bmiWeight" value="70">
+            <!-- أداة 11 -->
+            <div class="tool-card" data-name="حاسبة مؤشر كتلة الجسم bmi">
+                <h3 id="t11_title">11. حاسبة مؤشر الكتلة BMI</h3>
+                <div>
+                    <div class="input-group"><label id="t11_lbl1">الوزن (كغ):</label><input type="number" id="bmiWeight" value="70"></div>
+                    <div class="input-group"><label id="t11_lbl2">الطول (سم):</label><input type="number" id="bmiHeight" value="175"></div>
                 </div>
-                <div class="input-group">
-                    <label id="t11_lbl2">الطول (سم):</label>
-                    <input type="number" id="bmiHeight" value="175">
-                </div>
-                <button class="action-btn" onclick="calcBMI()" id="t11_btn">احسب مؤشر الكتلة</button>
-                <div class="result-box" id="bmiResult">...</div>
-            </div>
-
-            <!-- أداة 12: توليد UUID -->
-            <div id="t12" class="tool-view">
-                <h2 id="t12_title">مولد المعرفات الفريدة (UUID v4)</h2>
-                <button class="action-btn" onclick="generateUUID()" id="t12_btn">توليد معرف جديد</button>
-                <div class="result-box">
-                    <span id="uuidResult" class="pass-output">...</span>
+                <div>
+                    <button class="action-btn" onclick="calcBMI()" id="t11_btn">احسب المؤشر</button>
+                    <div class="result-box" id="bmiResult">...</div>
                 </div>
             </div>
 
-            <!-- أداة 13: تدرجات لونية CSS -->
-            <div id="t13" class="tool-view">
-                <h2 id="t13_title">مولد التدرجات اللونية الجاهزة (CSS Gradients)</h2>
-                <div id="gradientBox" class="color-preview" style="background: linear-gradient(135deg, #4f46e5 0%, #ec4899 100%);"></div>
-                <button class="action-btn" onclick="generateGradient()" id="t13_btn" style="margin-top: 15px;">توليد تدرج عشوائي</button>
-                <div class="result-box" id="gradientCode" style="font-family:monospace; font-size:0.9rem;">background: linear-gradient(135deg, #4f46e5 0%, #ec4899 100%);</div>
+            <!-- أداة 12 -->
+            <div class="tool-card" data-name="مولد المعرفات الفريدة uuid">
+                <h3 id="t12_title">12. مولد المعرفات UUID</h3>
+                <div></div>
+                <div>
+                    <button class="action-btn" onclick="generateUUID()" id="t12_btn">توليد UUID</button>
+                    <div class="result-box"><span id="uuidResult" class="pass-output">...</span></div>
+                </div>
             </div>
 
-            <!-- أداة 14: منسق JSON -->
-            <div id="t14" class="tool-view">
-                <h2 id="t14_title">منسق وفاحص أكواد JSON</h2>
-                <div class="input-group">
-                    <textarea id="jsonInput" placeholder='أدخل كود JSON غير منسق هنا، مثال: {"name":"Yacine","age":16}'></textarea>
+            <!-- أداة 13 -->
+            <div class="tool-card" data-name="تدرجات لونية css gradient">
+                <h3 id="t13_title">13. تدرجات CSS اللونية</h3>
+                <div>
+                    <div id="gradientBox" class="color-preview" style="background: linear-gradient(135deg, #0284c7 0%, #9333ea 100%);"></div>
                 </div>
-                <button class="action-btn" onclick="formatJSON()" id="t14_btn">تنسيق وتدقيق JSON</button>
-                <div class="result-box" id="jsonResult" style="font-family:monospace; white-space: pre-wrap;">...</div>
+                <div>
+                    <button class="action-btn" onclick="generateGradient()" id="t13_btn">توليد تدرج عشوائي</button>
+                    <div class="result-box" id="gradientCode" style="font-family:monospace; font-size:0.75rem;">background: linear-gradient(...);</div>
+                </div>
             </div>
 
-            <!-- أداة 15: مولد QR Code -->
-            <div id="t15" class="tool-view">
-                <h2 id="t15_title">مولد رموز الاستجابة السريعة (QR Code)</h2>
-                <div class="input-group">
-                    <label id="t15_lbl">النص أو الرابط المراد تحويله:</label>
-                    <input type="text" id="qrInput" value="https://instagram.com/yacine_chahta" placeholder="أدخل رابط أو نص...">
+            <!-- أداة 14 -->
+            <div class="tool-card" data-name="منسق وفاحص أكواد json">
+                <h3 id="t14_title">14. منسق وفاحص JSON</h3>
+                <div>
+                    <div class="input-group"><textarea id="jsonInput" placeholder='{"key": "value"}'></textarea></div>
                 </div>
-                <button class="action-btn" onclick="generateQR()" id="t15_btn">إنشاء كود QR</button>
-                <div class="result-box" id="qrResult" style="text-align: center;">...</div>
+                <div>
+                    <button class="action-btn" onclick="formatJSON()" id="t14_btn">تنسيق JSON</button>
+                    <div class="result-box" id="jsonResult" style="font-family:monospace; white-space: pre-wrap; max-height:80px; overflow:auto;">...</div>
+                </div>
+            </div>
+
+            <!-- أداة 15 -->
+            <div class="tool-card" data-name="مولد رمز الاستجابة السريعة qr code">
+                <h3 id="t15_title">15. مولد QR Code</h3>
+                <div>
+                    <div class="input-group"><label id="t15_lbl">الرابط أو النص:</label><input type="text" id="qrInput" value="https://instagram.com/yacine_chahta"></div>
+                </div>
+                <div>
+                    <button class="action-btn" onclick="generateQR()" id="t15_btn">إنشاء QR</button>
+                    <div class="result-box" id="qrResult" style="text-align: center;">...</div>
+                </div>
             </div>
 
         </div>
@@ -283,63 +276,50 @@
 
         const translations = {
             ar: {
-                title: "منصة الأدوات التقنية المتقدمة",
-                desc: "مكتبة أدوات احترافية متكاملة تعمل مباشرة وسريعة في متصفحك بكل أمان.",
-                btnLang: "English", dir: "rtl", sidebarTitle: "الأدوات المتاحة (15 أداة)",
+                title: "منصة الأدوات الذكية المتقدمة",
+                desc: "لوحة تحكم تفاعلية متكاملة تضم 15 أداة برمجية وتقنية سريعة تعمل بالكامل في متصفحك.",
+                btnLang: "English", dir: "rtl",
                 footerText: 'تطوير وتصميم بواسطة: <strong>ياسين</strong> | للتواصل عبر إنستغرام: <a href="https://instagram.com/yacine_chahta" target="_blank">@yacine_chahta</a>',
-                nav_t1: "1. ضغط وتحويل الصور", nav_t2: "2. مولد كلمات السر", nav_t3: "3. عداد الكلمات والأحرف",
-                nav_t4: "4. حاسبة سرعة التحميل", nav_t5: "5. محول صياغة النصوص", nav_t6: "6. مولد ألوان التصميم",
-                nav_t7: "7. حاسبة وقت القراءة", nav_t8: "8. مولد نصوص Lorem", nav_t9: "9. حاسبة العمر بالتفصيل", nav_t10: "10. مشفر فك التشفير Base64",
-                nav_t11: "11. حاسبة مؤشر كتلة الجسم BMI", nav_t12: "12. مولد المعرفات الفريدة UUID", nav_t13: "13. مولد التدرجات اللونية CSS", nav_t14: "14. منسق وصانع أكواد JSON", nav_t15: "15. مولد رمز الاستجابة QR Code",
-                t1_title: "أداة ضغط وتحويل صيغ الصور", t1_lbl1: "اختر صورة من جهازك:", t1_lbl2: "الصيغة المستهدفة للتحويل:", t1_btn: "معالجة وتحويل الصورة",
-                t2_title: "مولد كلمات السر القوية والآمنة", t2_lbl: "طول كلمة السر (عدد الخانات):", t2_btn: "توليد كلمة السر",
-                t3_title: "عداد الكلمات والأحرف والأسطر", t3_ph: "أدخل أو الصق النص هنا...",
-                t4_title: "حاسبة تقدير وقت وسرعة التحميل", t4_lbl1: "حجم الملف المراد تحميله (GB):", t4_lbl2: "سرعة الإنترنت لديك (Mbps):", t4_btn: "حساب الوقت المتوقع",
-                t5_title: "محول صياغة النصوص والأنماط",
-                t6_title: "مولد الألوان العشوائية وأكواد التنسيق", t6_btn: "توليد لون جديد",
-                t7_title: "حاسبة زَمَن قراءة النص المقدر", t7_ph: "الصق النص لمعرفة وقت القراءة المتوقع...",
-                t8_title: "مولد نصوص تجريبية (Lorem Ipsum)", t8_lbl: "عدد الفقرات المطلوب توليدها:", t8_btn: "توليد النص التجريبي",
-                t9_title: "حاسبة العمر والدقائق بالتفصيل", t9_lbl: "تاريخ ميلادك:", t9_btn: "حساب العمر",
-                t10_title: "مشفّر ومفكك نصوص Base64",
-                t11_title: "حاسبة مؤشر كتلة الجسم (BMI)", t11_lbl1: "الوزن (كغ):", t11_lbl2: "الطول (سم):", t11_btn: "احسب مؤشر الكتلة",
-                t12_title: "مولد المعرفات الفريدة (UUID v4)", t12_btn: "توليد معرف جديد",
-                t13_title: "مولد التدرجات اللونية الجاهزة (CSS Gradients)", t13_btn: "توليد تدرج عشوائي",
-                t14_title: "منسق وفاحص أكواد JSON", t14_btn: "تنسيق وتدقيق JSON",
-                t15_title: "مولد رموز الاستجابة السريعة (QR Code)", t15_lbl: "النص أو الرابط المراد تحويله:", t15_btn: "إنشاء كود QR"
+                searchPh: "ابحث عن أداة معينة...",
+                t1_title: "1. ضغط وتحويل الصور", t1_lbl1: "اختر صورة:", t1_lbl2: "الصيغة المستهدفة:", t1_btn: "معالجة وتحويل",
+                t2_title: "2. مولد كلمات السر القوية", t2_lbl: "طول كلمة السر:", t2_btn: "توليد كلمة السر",
+                t3_title: "3. عداد الكلمات والأحرف", t3_ph: "أدخل النص هنا...",
+                t4_title: "4. حاسبة سرعة التحميل", t4_lbl1: "حجم الملف (GB):", t4_lbl2: "سرعة النت (Mbps):", t4_btn: "حساب الوقت",
+                t5_title: "5. محول صيغة النصوص",
+                t6_title: "6. مولد ألوان التصميم", t6_btn: "توليد لون جديد",
+                t7_title: "7. حاسبة وقت القراءة", t7_ph: "الصق النص هنا...",
+                t8_title: "8. مولد نصوص Lorem Ipsum", t8_lbl: "عدد الفقرات:", t8_btn: "توليد النص",
+                t9_title: "9. حاسبة العمر بالتفصيل", t9_lbl: "تاريخ الميلاد:", t9_btn: "حساب العمر",
+                t10_title: "10. مشفر Base64",
+                t11_title: "11. حاسبة مؤشر الكتلة BMI", t11_lbl1: "الوزن (كغ):", t11_lbl2: "الطول (سم):", t11_btn: "احسب المؤشر",
+                t12_title: "12. مولد المعرفات UUID", t12_btn: "توليد UUID",
+                t13_title: "13. تدرجات CSS اللونية", t13_btn: "توليد تدرج عشوائي",
+                t14_title: "14. منسق وفاحص JSON", t14_btn: "تنسيق JSON",
+                t15_title: "15. مولد QR Code", t15_lbl: "الرابط أو النص:", t15_btn: "إنشاء QR"
             },
             en: {
-                title: "Advanced Multi-Tech Tools Hub",
-                desc: "A professional and comprehensive suite of secure browser utility tools.",
-                btnLang: "العربية", dir: "ltr", sidebarTitle: "Available Tools (15 Tools)",
+                title: "Advanced Smart Tools Hub",
+                desc: "An interactive dashboard featuring 15 fast, secure, client-side developer utility tools.",
+                btnLang: "العربية", dir: "ltr",
                 footerText: 'Developed by: <strong>Yacine</strong> | Instagram: <a href="https://instagram.com/yacine_chahta" target="_blank">@yacine_chahta</a>',
-                nav_t1: "1. Image Converter", nav_t2: "2. Password Generator", nav_t3: "3. Word & Char Counter",
-                nav_t4: "4. Download Speed Calc", nav_t5: "5. Text Case Converter", nav_t6: "6. Random Color Generator",
-                nav_t7: "7. Reading Time Calc", nav_t8: "8. Lorem Ipsum Generator", nav_t9: "9. Detailed Age Calculator", nav_t10: "10. Base64 Encoder/Decoder",
-                nav_t11: "11. BMI Calculator", nav_t12: "12. UUID v4 Generator", nav_t13: "13. CSS Gradient Generator", nav_t14: "14. JSON Formatter & Lint", nav_t15: "15. QR Code Generator",
-                t1_title: "Image Converter & Compressor", t1_lbl1: "Select Image:", t1_lbl2: "Target Format:", t1_btn: "Process Image",
-                t2_title: "Strong Password Generator", t2_lbl: "Password Length:", t2_btn: "Generate Password",
-                t3_title: "Word, Character & Line Counter", t3_ph: "Type or paste text here...",
-                t4_title: "Download Speed Estimator", t4_lbl1: "File Size (GB):", t4_lbl2: "Internet Speed (Mbps):", t4_btn: "Calculate Time",
-                t5_title: "Text Case Style Converter",
-                t6_title: "Random Color Generator", t6_btn: "Generate New Color",
-                t7_title: "Estimated Reading Time Calculator", t7_ph: "Paste text to estimate reading time...",
-                t8_title: "Lorem Ipsum Text Generator", t8_lbl: "Number of Paragraphs:", t8_btn: "Generate Text",
-                t9_title: "Detailed Age Calculator", t9_lbl: "Your Birth Date:", t9_btn: "Calculate Age",
-                t10_title: "Base64 Encoder & Decoder",
-                t11_title: "Body Mass Index (BMI) Calculator", t11_lbl1: "Weight (kg):", t11_lbl2: "Height (cm):", t11_btn: "Calculate BMI",
-                t12_title: "Unique Identifier Generator (UUID v4)", t12_btn: "Generate New UUID",
-                t13_title: "CSS Gradient Background Generator", t13_btn: "Generate Random Gradient",
-                t14_title: "JSON Formatter & Validator", t14_btn: "Format & Validate JSON",
-                t15_title: "QR Code Generator", t15_lbl: "Text or URL to convert:", t15_btn: "Generate QR Code"
+                searchPh: "Search for a tool...",
+                t1_title: "1. Image Converter", t1_lbl1: "Select Image:", t1_lbl2: "Target Format:", t1_btn: "Process Image",
+                t2_title: "2. Password Generator", t2_lbl: "Password Length:", t2_btn: "Generate Password",
+                t3_title: "3. Word & Char Counter", t3_ph: "Type text here...",
+                t4_title: "4. Download Speed Calc", t4_lbl1: "File Size (GB):", t4_lbl2: "Internet Speed (Mbps):", t4_btn: "Calculate Time",
+                t5_title: "5. Text Case Converter",
+                t6_title: "6. Random Color Generator", t6_btn: "Generate New Color",
+                t7_title: "7. Reading Time Calculator", t7_ph: "Paste text here...",
+                t8_title: "8. Lorem Ipsum Generator", t8_lbl: "Paragraphs:", t8_btn: "Generate Text",
+                t9_title: "9. Detailed Age Calculator", t9_lbl: "Birth Date:", t9_btn: "Calculate Age",
+                t10_title: "10. Base64 Encoder/Decoder",
+                t11_title: "11. BMI Calculator", t11_lbl1: "Weight (kg):", t11_lbl2: "Height (cm):", t11_btn: "Calculate BMI",
+                t12_title: "12. UUID v4 Generator", t12_btn: "Generate UUID",
+                t13_title: "13. CSS Gradient Generator", t13_btn: "Generate Gradient",
+                t14_title: "14. JSON Formatter & Lint", t14_btn: "Format JSON",
+                t15_title: "15. QR Code Generator", t15_lbl: "URL or Text:", t15_btn: "Generate QR"
             }
         };
-
-        function switchTool(toolId, btn) {
-            document.querySelectorAll('.tool-view').forEach(el => el.classList.remove('active'));
-            document.querySelectorAll('.nav-btn').forEach(el => el.classList.remove('active'));
-            document.getElementById(toolId).classList.add('active');
-            btn.classList.add('active');
-        }
 
         function toggleLanguage() {
             currentLang = currentLang === 'ar' ? 'en' : 'ar';
@@ -349,14 +329,12 @@
             document.getElementById('langBtn').innerText = data.btnLang;
             document.getElementById('headerTitle').innerText = data.title;
             document.getElementById('headerDesc').innerText = data.desc;
-            document.getElementById('sidebarTitle').innerText = data.sidebarTitle;
+            document.getElementById('searchInput').placeholder = data.searchPh;
             document.getElementById('footerText').innerHTML = data.footerText;
 
             for(let i=1; i<=15; i++) {
-                if(data[`nav_t${i}`]) document.getElementById(`nav_t${i}`).innerText = data[`nav_t${i}`];
                 if(data[`t${i}_title`]) document.getElementById(`t${i}_title`).innerText = data[`t${i}_title`];
             }
-
             document.getElementById('t1_lbl1').innerText = data.t1_lbl1;
             document.getElementById('t1_lbl2').innerText = data.t1_lbl2;
             document.getElementById('t1_btn').innerText = data.t1_btn;
@@ -372,20 +350,31 @@
             document.getElementById('t8_btn').innerText = data.t8_btn;
             document.getElementById('t9_lbl').innerText = data.t9_lbl;
             document.getElementById('t9_btn').innerText = data.t9_btn;
-            
-            if(document.getElementById('t11_lbl1')) {
-                document.getElementById('t11_lbl1').innerText = data.t11_lbl1;
-                document.getElementById('t11_lbl2').innerText = data.t11_lbl2;
-                document.getElementById('t11_btn').innerText = data.t11_btn;
-                document.getElementById('t12_btn').innerText = data.t12_btn;
-                document.getElementById('t13_btn').innerText = data.t13_btn;
-                document.getElementById('t14_btn').innerText = data.t14_btn;
-                document.getElementById('t15_lbl').innerText = data.t15_lbl;
-                document.getElementById('t15_btn').innerText = data.t15_btn;
-            }
+            document.getElementById('t11_lbl1').innerText = data.t11_lbl1;
+            document.getElementById('t11_lbl2').innerText = data.t11_lbl2;
+            document.getElementById('t11_btn').innerText = data.t11_btn;
+            document.getElementById('t12_btn').innerText = data.t12_btn;
+            document.getElementById('t13_btn').innerText = data.t13_btn;
+            document.getElementById('t14_btn').innerText = data.t14_btn;
+            document.getElementById('t15_lbl').innerText = data.t15_lbl;
+            document.getElementById('t15_btn').innerText = data.t15_btn;
         }
 
-        // Logic for Tools 1 to 10
+        function filterTools() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.tool-card');
+            cards.forEach(card => {
+                const name = card.getAttribute('data-name').toLowerCase();
+                const title = card.querySelector('h3').innerText.toLowerCase();
+                if(name.includes(query) || title.includes(query)) {
+                    card.style.display = "flex";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+
+        // الوظائف البرمجية للأدوات
         function processImage() {
             const input = document.getElementById('imageInput');
             const format = document.getElementById('formatSelect').value;
@@ -401,9 +390,9 @@
                     canvas.getContext('2d').drawImage(img, 0, 0);
                     const link = document.createElement('a');
                     link.href = canvas.toDataURL(format, 0.85);
-                    link.download = `converted-image.${format.split('/')[1]}`;
-                    link.innerText = currentLang === 'ar' ? '📥 تحميل الصورة المعالجة' : '📥 Download Processed Image';
-                    link.style.color = '#818cf8';
+                    link.download = `converted.${format.split('/')[1]}`;
+                    link.innerText = currentLang === 'ar' ? '📥 تحميل الصورة' : '📥 Download Image';
+                    link.style.color = '#38bdf8';
                     link.style.fontWeight = 'bold';
                     link.style.textDecoration = 'none';
                     resultBox.innerHTML = ''; 
@@ -440,10 +429,9 @@
             const hrs = Math.floor(totalSec / 3600);
             const mins = Math.floor((totalSec % 3600) / 60); 
             const secs = totalSec % 60;
-            
             document.getElementById('downloadResult').innerText = currentLang === 'ar'
-                ? `الوقت المقدر: ${hrs > 0 ? hrs + ' ساعة و ' : ''}${mins} دقيقة و ${secs} ثانية`
-                : `Estimated Time: ${hrs > 0 ? hrs + 'h ' : ''}${mins}m ${secs}s`;
+                ? `الوقت: ${hrs > 0 ? hrs + 'س ' : ''}${mins}د ${secs}ث`
+                : `Time: ${hrs > 0 ? hrs + 'h ' : ''}${mins}m ${secs}s`;
         }
 
         function convertCase(type) {
@@ -463,15 +451,15 @@
             const words = text ? text.split(/\s+/).length : 0;
             const seconds = Math.ceil((words / 200) * 60);
             document.getElementById('readTimeResult').innerText = currentLang === 'ar'
-                ? `وقت القراءة المتوقع: ${seconds} ثانية`
-                : `Est. Reading Time: ${seconds} seconds`;
+                ? `الوقت المقدر: ${seconds} ثانية`
+                : `Reading Time: ${seconds}s`;
         }
 
         function generateLorem() {
             const count = document.getElementById('loremCount').value;
-            const loremText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ";
+            const loremText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ";
             let res = "";
-            for(let i=0; i<count; i++) res += `<p style="margin-bottom:10px;">${loremText}</p>`;
+            for(let i=0; i<count; i++) res += `<p>${loremText}</p>`;
             document.getElementById('loremResult').innerHTML = res;
         }
 
@@ -481,45 +469,32 @@
             const birth = new Date(dateVal);
             const diff = new Date() - birth;
             const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25));
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
             document.getElementById('ageResult').innerText = currentLang === 'ar'
-                ? `العمر: ${years} سنة (ما يعادل حوالي ${days} يوم)`
-                : `Age: ${years} years old (~${days} days)`;
+                ? `العمر: ${years} سنة`
+                : `Age: ${years} years old`;
         }
 
         function encodeBase64() {
             try {
                 const val = document.getElementById('base64Input').value;
                 document.getElementById('base64Result').innerText = btoa(unescape(encodeURIComponent(val)));
-            } catch(e) {
-                document.getElementById('base64Result').innerText = "Error encoding text!";
-            }
+            } catch(e) { document.getElementById('base64Result').innerText = "Error!"; }
         }
 
         function decodeBase64() {
             try {
                 const val = document.getElementById('base64Input').value;
                 document.getElementById('base64Result').innerText = decodeURIComponent(escape(atob(val)));
-            } catch(e) {
-                document.getElementById('base64Result').innerText = "Error: Invalid Base64 string!";
-            }
+            } catch(e) { document.getElementById('base64Result').innerText = "Invalid Base64!"; }
         }
 
-        // Logic for New Tools (11 to 15)
         function calcBMI() {
             const w = parseFloat(document.getElementById('bmiWeight').value);
             const h = parseFloat(document.getElementById('bmiHeight').value) / 100;
             if(!w || !h) return;
             const bmi = (w / (h * h)).toFixed(1);
-            let status = "";
-            if(bmi < 18.5) status = currentLang === 'ar' ? 'نحافة (وزن منخفض)' : 'Underweight';
-            else if(bmi < 25) status = currentLang === 'ar' ? 'وزن مثالي وصحي ✨' : 'Normal Weight ✨';
-            else if(bmi < 30) status = currentLang === 'ar' ? 'زيادة في الوزن' : 'Overweight';
-            else status = currentLang === 'ar' ? 'سمنة' : 'Obese';
-
-            document.getElementById('bmiResult').innerText = currentLang === 'ar'
-                ? `مؤشر كتلة الجسم (BMI): ${bmi} — الحالة: ${status}`
-                : `BMI Score: ${bmi} — Status: ${status}`;
+            let status = bmi < 18.5 ? (currentLang==='ar'?'نحافة':'Underweight') : bmi < 25 ? (currentLang==='ar'?'وزن مثالي ✨':'Normal ✨') : (currentLang==='ar'?'زيادة وزن':'Overweight');
+            document.getElementById('bmiResult').innerText = `BMI: ${bmi} (${status})`;
         }
 
         function generateUUID() {
@@ -531,10 +506,9 @@
         }
 
         function generateGradient() {
-            const color1 = '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
-            const color2 = '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
-            const deg = Math.floor(Math.random() * 360);
-            const grad = `linear-gradient(${deg}deg, ${color1} 0%, ${color2} 100%)`;
+            const c1 = '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
+            const c2 = '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
+            const grad = `linear-gradient(135deg, ${c1} 0%, ${c2} 100%)`;
             document.getElementById('gradientBox').style.background = grad;
             document.getElementById('gradientCode').innerText = `background: ${grad};`;
         }
@@ -545,18 +519,18 @@
             try {
                 const parsed = JSON.parse(raw);
                 resBox.style.color = '#34d399';
-                resBox.innerText = JSON.stringify(parsed, null, 4);
+                resBox.innerText = JSON.stringify(parsed, null, 2);
             } catch(e) {
                 resBox.style.color = '#f87171';
-                resBox.innerText = currentLang === 'ar' ? 'خطأ: كود JSON غير صالح أو غير مكتمل!' : 'Error: Invalid JSON syntax!';
+                resBox.innerText = currentLang === 'ar' ? 'خطأ في تنسيق JSON!' : 'Invalid JSON!';
             }
         }
 
         function generateQR() {
             const text = encodeURIComponent(document.getElementById('qrInput').value);
             if(!text) return;
-            const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${text}`;
-            document.getElementById('qrResult').innerHTML = `<img src="${qrUrl}" alt="QR Code" style="border-radius:8px; border:3px solid #374151;" /><br><span style="font-size:0.85rem; color:#9ca3af; margin-top:8px; display:block;">${currentLang==='ar'?'تم توليد الكود بنجاح':'QR Generated Successfully'}</span>`;
+            const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${text}`;
+            document.getElementById('qrResult').innerHTML = `<img src="${qrUrl}" alt="QR" style="border-radius:6px; border:2px solid #334155;" />`;
         }
     </script>
 </body>
